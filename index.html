@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Langkah Berdikari</title>
+  
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Glow Background Canvas -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Mobile App Container -->
+  <div class="app-wrapper">
+    <div class="phone-case">
+      <div class="phone-speaker"></div>
+
+      <div class="screen-content" id="phoneAppContainer">
+        
+        <!-- ============================================================ -->
+        <!-- SCREEN 1: BERANDA (12 DIVISI DENGAN LOGO DI ATAS GREETING)   -->
+        <!-- ============================================================ -->
+        <div class="sub-screen active" id="appScreenHome">
+          <!-- Top Bar: Menu Grid di Kiri, Notifikasi di Kanan -->
+          <div class="screen-top-bar">
+            <button class="icon-btn" onclick="openAllDivisionsSheet()" aria-label="Menu">
+              <div class="grid-2x2-icon">
+                <span></span><span></span>
+                <span></span><span></span>
+              </div>
+            </button>
+            
+            <div class="top-bar-right-actions">
+              <button class="admin-mode-pill" id="btnHeaderAdminToggle" onclick="toggleAdminPrompt()" title="Login Admin untuk Hapus Chat">
+                <span class="admin-icon">🔒</span>
+                <span id="headerAdminStatus">Member</span>
+              </button>
+              <button class="icon-btn notif-btn" onclick="openNotificationModal()" aria-label="Notifikasi">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                </svg>
+                <span class="notif-dot"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Brand Section: Logo Berdikari di atas Selamat Datang -->
+          <div class="brand-hero-section">
+            <div class="brand-logo-card">
+              <img src="logo.png" alt="Logo Langkah Berdikari" class="hero-brand-img" />
+            </div>
+            
+            <div class="greeting-box">
+              <span class="greeting-sub">Selamat Datang di</span>
+              <h2 class="app-hero-title">Langkah Berdikari</h2>
+              <span class="greeting-time" id="appLiveClock">09:57</span>
+            </div>
+          </div>
+
+          <!-- Section Label: Daftar 12 Divisi -->
+          <div class="section-label-row">
+            <h3 class="section-title">Daftar Divisi (12)</h3>
+            <button class="view-all-btn" onclick="openAllDivisionsSheet()">
+              <span>Semua Divisi</span>
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- 12 Divisi Cards Grid (Scrollable 2-column) -->
+          <div class="room-grid" id="homeDivisionsGrid">
+            <!-- 1. BPH -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1BPH_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="BPH.png" class="division-card-logo" alt="BPH Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">BPH</h4>
+                <span class="division-subtitle">Sekretariat & Inti</span>
+                <span class="division-count-pill">6 Pengurus</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- 2. PSDMK -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1PSDMK_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Psdmk.png" class="division-card-logo" alt="PSDMK Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">PSDMK</h4>
+                <span class="division-subtitle">Kaderisasi & SDM</span>
+                <span class="division-count-pill">14 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- 3. Medbrand -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1MEDBRAND_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Medbrand.png" class="division-card-logo" alt="Medbrand Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Medbrand</h4>
+                <span class="division-subtitle">Media & Branding</span>
+                <span class="division-count-pill">12 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- 4. Eksmit -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1EKSMIT_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Eksmit.png" class="division-card-logo" alt="Eksmit Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Eksmit</h4>
+                <span class="division-subtitle">Eksternal & Kemitraan</span>
+                <span class="division-count-pill">10 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- 5. Kastrat -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1KASTRAT_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Kastrat.png" class="division-card-logo" alt="Kastrat Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Kastrat</h4>
+                <span class="division-subtitle">Kajian & Strategis</span>
+                <span class="division-count-pill">11 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- 6. Ristek -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1RISTEK_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Ristek.png" class="division-card-logo" alt="Ristek Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Ristek</h4>
+                <span class="division-subtitle">Riset & Teknologi</span>
+                <span class="division-count-pill">10 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- 7. Sosling -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1SOSLING_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Sosling.png" class="division-card-logo" alt="Sosling Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Sosling</h4>
+                <span class="division-subtitle">Sosial & Lingkungan</span>
+                <span class="division-count-pill">16 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- 8. ADKESMAH -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1ADKESMAH_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="ADKESMAH.png" class="division-card-logo" alt="ADKESMAH Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">ADKESMAH</h4>
+                <span class="division-subtitle">Advokasi Mahasiswa</span>
+                <span class="division-count-pill">9 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- 9. Akpres -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1AKPRES_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Akpres.png" class="division-card-logo" alt="Akpres Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Akpres</h4>
+                <span class="division-subtitle">Akademik & Prestasi</span>
+                <span class="division-count-pill">8 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- 10. Depor -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1DEPOR_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Depor.png" class="division-card-logo" alt="Depor Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Depor</h4>
+                <span class="division-subtitle">Olahraga & Turnamen</span>
+                <span class="division-count-pill">13 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- 11. Senbud -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1SENBUD_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Senbud.png" class="division-card-logo" alt="Senbud Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Senbud</h4>
+                <span class="division-subtitle">Seni & Budaya</span>
+                <span class="division-count-pill">15 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- 12. IMBANG -->
+            <a class="room-card card-glass division-link-item" href="https://drive.google.com/drive/u/0/folders/1IMBANG_BEM" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="IMBANG.png" class="division-card-logo" alt="IMBANG Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">IMBANG</h4>
+                <span class="division-subtitle">Inkubasi & Bisnis</span>
+                <span class="division-count-pill">9 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SCREEN 2: DETAIL DIVISI (DI BLANK KOSONG SESUAI INSTRUKSI)   -->
+        <!-- ============================================================ -->
+        <div class="sub-screen" id="appScreenDetail">
+          <!-- Top Bar with Back Button -->
+          <div class="screen-top-bar">
+            <button class="icon-btn" onclick="navigateTo('home')" aria-label="Kembali">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <h3 class="screen-header-title" id="activeDivTitle">Portal Divisi</h3>
+            <div style="width: 38px;"></div>
+          </div>
+
+          <!-- Blank Kosong -->
+          <div class="blank-screen-container"></div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SCREEN 3: RUANG CHAT & FORUM DIVISI (DI POSISI 2 DARI KANAN) -->
+        <!-- ============================================================ -->
+        <div class="sub-screen" id="appScreenChat">
+          <!-- Chat Top Bar -->
+          <div class="screen-top-bar chat-top-bar">
+            <button class="icon-btn" onclick="navigateTo('home')" aria-label="Kembali">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <div class="chat-title-group">
+              <h3 class="screen-header-title">Chat & Diskusi Divisi</h3>
+              <span class="chat-live-status">● Forum Anggota Aktif</span>
+            </div>
+            <button class="admin-lock-btn" id="btnChatAdminStatus" onclick="toggleAdminPrompt()" title="Pengaturan Admin">
+              <span id="chatAdminLockIcon">🔒</span>
+            </button>
+          </div>
+
+          <!-- Filter Divisi Channel -->
+          <div class="chat-channel-filter">
+            <span class="filter-label">Saluran:</span>
+            <select class="channel-select" id="chatChannelFilter" onchange="handleChannelChange(this.value)">
+              <option value="all">🌐 Semua Divisi (Umum)</option>
+              <!-- Populated with 12 divisions by JS -->
+            </select>
+          </div>
+
+          <!-- Admin Notice Banner (If Admin Mode Active) -->
+          <div class="admin-active-banner" id="adminActiveBanner">
+            <span class="badge-crown">👑 Mode Admin Aktif</span>
+            <small>Anda memiliki hak akses untuk menghapus pesan anggota.</small>
+          </div>
+
+          <!-- Messages Container -->
+          <div class="chat-messages-container" id="globalChatMessagesList">
+            <!-- Messages rendered dynamically from localStorage -->
+          </div>
+
+          <!-- Chat Input Area (Nama Asli Wajib + Teks) -->
+          <div class="chat-input-sticky-footer">
+            <div class="sender-identity-row">
+              <div class="name-field-wrap">
+                <span class="field-icon">👤</span>
+                <input type="text" class="chat-name-input" id="chatSenderRealName" placeholder="Nama Asli (Wajib diisi)" />
+              </div>
+              <select class="chat-div-select" id="chatMessageDivSelect">
+                <!-- Populated with 12 divisions -->
+              </select>
+            </div>
+
+            <div class="message-composer-row">
+              <textarea class="chat-text-area" id="chatMessageText" placeholder="Tulis pesan Anda di sini..." rows="1" onkeypress="handleChatEnter(event)"></textarea>
+              <button class="chat-send-btn-primary" onclick="submitNewChatMessage()" title="Kirim Pesan">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SCREEN 4: STATISTIK & KINERJA 12 DIVISI (MENU PALING KANAN)  -->
+        <!-- ============================================================ -->
+        <div class="sub-screen" id="appScreenStats">
+          <!-- Top Bar: Back, Title & Export Action -->
+          <div class="screen-top-bar stats-top-bar">
+            <button class="icon-btn" onclick="navigateTo('home')" aria-label="Kembali" title="Kembali ke Beranda">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <div class="stats-header-titles">
+              <h3 class="screen-header-title">Statistik & Kinerja</h3>
+              <span class="stats-header-sub">Dashboard Terpadu 12 Divisi</span>
+            </div>
+            <button class="icon-btn stats-export-icon-btn" onclick="downloadStatsReport()" aria-label="Unduh Laporan" title="Unduh Laporan Rekapitulasi">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Filter Periode (Interactive Switcher Tabs) -->
+          <div class="stats-period-bar">
+            <button class="period-tab-btn" id="btnPeriod_month" onclick="switchStatsPeriod('month')">Bulan Ini</button>
+            <button class="period-tab-btn" id="btnPeriod_semester" onclick="switchStatsPeriod('semester')">Semester 1</button>
+            <button class="period-tab-btn active" id="btnPeriod_year" onclick="switchStatsPeriod('year')">Tahun 2026/2027</button>
+          </div>
+
+          <!-- Executive KPI Grid (4 Metrik Utama) -->
+          <div class="stats-kpi-grid">
+            <div class="stat-kpi-card">
+              <div class="stat-kpi-top">
+                <span class="stat-kpi-icon">👥</span>
+                <span class="stat-kpi-badge positive" id="statGrowParticipants">+18.4% YoY</span>
+              </div>
+              <div class="stat-kpi-val" id="statValParticipants">43.058</div>
+              <div class="stat-kpi-lbl">Total Partisipan Terjangkau</div>
+            </div>
+
+            <div class="stat-kpi-card">
+              <div class="stat-kpi-top">
+                <span class="stat-kpi-icon">📋</span>
+                <span class="stat-kpi-badge positive" id="statRateProker">88.9% Tercapai</span>
+              </div>
+              <div class="stat-kpi-val" id="statValProker">32 / 36</div>
+              <div class="stat-kpi-lbl">Program Kerja Terlaksana</div>
+            </div>
+
+            <div class="stat-kpi-card">
+              <div class="stat-kpi-top">
+                <span class="stat-kpi-icon">🤝</span>
+                <span class="stat-kpi-badge neutral" id="statGrowPartners">+12 Baru</span>
+              </div>
+              <div class="stat-kpi-val" id="statValPartners">48 Lembaga</div>
+              <div class="stat-kpi-lbl">Mitra & Kolaborator Aktif</div>
+            </div>
+
+            <div class="stat-kpi-card">
+              <div class="stat-kpi-top">
+                <span class="stat-kpi-icon">⭐</span>
+                <span class="stat-kpi-badge gold" id="statLblSatisfaction">Sangat Puas (98%)</span>
+              </div>
+              <div class="stat-kpi-val" id="statValSatisfaction">4.92 / 5.0</div>
+              <div class="stat-kpi-lbl">Indeks Kepuasan Anggota</div>
+            </div>
+          </div>
+
+          <!-- Interactive Curve Chart Section (Aktivitas & Keterlibatan) -->
+          <div class="chart-section" id="statsChartSection">
+            <div class="chart-header stats-chart-header">
+              <div>
+                <h4 class="chart-title" id="statsChartTitle">Tren Pertumbuhan Partisipan</h4>
+                <span class="chart-subtitle" id="statSummarySub">Partisipan Terjangkau • 36 Program Kerja Tahunan</span>
+              </div>
+              <!-- Metric Switcher Pills -->
+              <div class="stats-chart-type-tabs">
+                <button class="chart-metric-btn active" id="metricBtn_participants" onclick="switchStatsChartMetric('participants')">Partisipan</button>
+                <button class="chart-metric-btn" id="metricBtn_hours" onclick="switchStatsChartMetric('hours')">Jam Kerja</button>
+                <button class="chart-metric-btn" id="metricBtn_budget" onclick="switchStatsChartMetric('budget')">Anggaran</button>
+              </div>
+            </div>
+
+            <div class="chart-container" id="statsUsageChart">
+              <svg class="usage-chart-svg" viewBox="0 0 300 130" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="chartLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#EC8129"/>
+                    <stop offset="100%" stop-color="#31487A"/>
+                  </linearGradient>
+                  <linearGradient id="chartAreaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#EC8129" stop-opacity="0.45"/>
+                    <stop offset="100%" stop-color="#31487A" stop-opacity="0.0"/>
+                  </linearGradient>
+                </defs>
+                <g class="chart-grid-lines">
+                  <line x1="20" y1="10" x2="20" y2="105" />
+                  <line x1="60" y1="10" x2="60" y2="105" />
+                  <line x1="100" y1="10" x2="100" y2="105" />
+                  <line x1="140" y1="10" x2="140" y2="105" />
+                  <line x1="180" y1="10" x2="180" y2="105" />
+                  <line x1="220" y1="10" x2="220" y2="105" />
+                  <line x1="260" y1="10" x2="260" y2="105" />
+                </g>
+                <path class="chart-area" d="M 20 85 C 40 85, 40 50, 60 50 C 80 50, 80 66, 100 66 C 120 66, 120 40, 140 40 C 160 40, 160 22, 180 22 C 200 22, 200 78, 220 78 C 240 78, 240 52, 260 52 L 260 110 L 20 110 Z" fill="url(#chartAreaGrad)" />
+                <path class="chart-stroke" d="M 20 85 C 40 85, 40 50, 60 50 C 80 50, 80 66, 100 66 C 120 66, 120 40, 140 40 C 160 40, 160 22, 180 22 C 200 22, 200 78, 220 78 C 240 78, 240 52, 260 52" fill="none" stroke="url(#chartLineGrad)" stroke-width="2.5" stroke-linecap="round" />
+                <g class="chart-active-pin" transform="translate(180, 22)">
+                  <circle cx="0" cy="0" r="8" fill="#ffffff" opacity="0.3" />
+                  <circle cx="0" cy="0" r="5" fill="#ffffff" stroke="#EC8129" stroke-width="2.5" />
+                </g>
+              </svg>
+
+              <div class="chart-time-labels">
+                <span>Jan</span>
+                <span>Mar</span>
+                <span>Mei</span>
+                <span>Jul</span>
+                <span class="active-time">Sep</span>
+                <span>Nov</span>
+                <span>Des</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leaderboard & Kinerja 12 Divisi -->
+          <div class="stats-leaderboard-section">
+            <div class="stats-section-header">
+              <div>
+                <h4 class="section-title">Kinerja & Proker 12 Divisi</h4>
+                <p class="section-sub">Ketuk baris divisi untuk melihat detail atau formulir</p>
+              </div>
+              <span class="badge-total-div">12 Divisi</span>
+            </div>
+
+            <div class="stat-leaderboard-list" id="statsDivisionsLeaderboard">
+              <!-- Rendered dynamically by renderDivisionsLeaderboard() in app.js -->
+            </div>
+          </div>
+
+          <!-- Distribusi Kategori Program Kerja -->
+          <div class="proker-dist-section">
+            <div class="stats-section-header">
+              <div>
+                <h4 class="section-title">Distribusi Kategori Program Kerja</h4>
+                <p class="section-sub">Komposisi fokus gerakan Langkah Berdikari</p>
+              </div>
+            </div>
+
+            <div class="proker-stacked-bar">
+              <div class="proker-seg seg-sdm" style="width: 28%;" title="Kaderisasi & SDM (28%)"></div>
+              <div class="proker-seg seg-ristek" style="width: 25%;" title="Riset & Teknologi (25%)"></div>
+              <div class="proker-seg seg-sosial" style="width: 24%;" title="Sosial & Pengabdian (24%)"></div>
+              <div class="proker-seg seg-media" style="width: 23%;" title="Media & Kemitraan (23%)"></div>
+            </div>
+
+            <div class="proker-dist-grid">
+              <div class="proker-cat-card">
+                <div class="proker-cat-head">
+                  <span class="proker-dot" style="background:#31487A;"></span>
+                  <span class="proker-cat-name">Kaderisasi & SDM</span>
+                </div>
+                <div class="proker-cat-val">28% <small>(10 Proker)</small></div>
+              </div>
+              <div class="proker-cat-card">
+                <div class="proker-cat-head">
+                  <span class="proker-dot" style="background:#1E2E4F;"></span>
+                  <span class="proker-cat-name">Riset & Teknologi</span>
+                </div>
+                <div class="proker-cat-val">25% <small>(9 Proker)</small></div>
+              </div>
+              <div class="proker-cat-card">
+                <div class="proker-cat-head">
+                  <span class="proker-dot" style="background:#8FB3E2;"></span>
+                  <span class="proker-cat-name">Sosial & Pengabdian</span>
+                </div>
+                <div class="proker-cat-val">24% <small>(9 Proker)</small></div>
+              </div>
+              <div class="proker-cat-card">
+                <div class="proker-cat-head">
+                  <span class="proker-dot" style="background:#EC8129;"></span>
+                  <span class="proker-cat-name">Media & Kemitraan</span>
+                </div>
+                <div class="proker-cat-val">23% <small>(8 Proker)</small></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestones & Capaian Terbaru Timeline -->
+          <div class="stats-milestone-section">
+            <div class="stats-section-header">
+              <div>
+                <h4 class="section-title">Milestone & Capaian Terkini</h4>
+                <p class="section-sub">Catatan kemajuan nyata yang telah diraih</p>
+              </div>
+            </div>
+
+            <div class="milestone-timeline">
+              <div class="milestone-item">
+                <div class="milestone-icon-wrap" style="background: rgba(30, 46, 79, 0.2); color: #1E2E4F;">🚀</div>
+                <div class="milestone-content">
+                  <div class="milestone-time">Baru Saja • Divisi Ristek</div>
+                  <div class="milestone-title">Peluncuran Berdikari AI & Portal v2.0</div>
+                  <div class="milestone-desc">Inovasi kecerdasan buatan terintegrasi untuk mempercepat konsultasi 12 divisi dan analisis berkas.</div>
+                </div>
+              </div>
+
+              <div class="milestone-item">
+                <div class="milestone-icon-wrap" style="background: rgba(143, 179, 226, 0.2); color: #8FB3E2;">🤝</div>
+                <div class="milestone-content">
+                  <div class="milestone-time">2 Hari Lalu • Divisi Humas</div>
+                  <div class="milestone-title">Penandatanganan MoU dengan 8 Mitra Nasional</div>
+                  <div class="milestone-desc">Memperluas jangkauan kolaborasi sponsorship dan dukungan fasilitas untuk agenda tahun 2026/2027.</div>
+                </div>
+              </div>
+
+              <div class="milestone-item">
+                <div class="milestone-icon-wrap" style="background: rgba(49, 72, 122, 0.2); color: #31487A;">🎓</div>
+                <div class="milestone-content">
+                  <div class="milestone-time">5 Hari Lalu • Divisi PSDM</div>
+                  <div class="milestone-title">Kelulusan 120 Peserta Leadership Camp</div>
+                  <div class="milestone-desc">Pembekalan kepemimpinan intensif untuk calon penggerak di seluruh unit kegiatan.</div>
+                </div>
+              </div>
+
+              <div class="milestone-item">
+                <div class="milestone-icon-wrap" style="background: rgba(236, 129, 41, 0.2); color: #EC8129;">📦</div>
+                <div class="milestone-content">
+                  <div class="milestone-time">1 Minggu Lalu • Divisi Pengmas</div>
+                  <div class="milestone-title">Penyaluran Bantuan Berdikari Peduli ke 5 Desa</div>
+                  <div class="milestone-desc">Distribusi paket perlengkapan belajar dan fasilitas air bersih untuk masyarakat binaan.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Laporan Lengkap Download Action Box -->
+          <div class="stats-export-box">
+            <div class="stats-export-icon">📊</div>
+            <div class="stats-export-info">
+              <h5 class="stats-export-title">Laporan Akuntabilitas Lengkap</h5>
+              <p class="stats-export-desc">Unduh berkas rekapitulasi data performa 12 divisi format PDF & Spreadsheet.</p>
+            </div>
+            <button class="stats-export-btn" onclick="downloadStatsReport()">
+              <span>Unduh Rekap</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SCREEN 5: BERDIKARI AI (GEMINI-STYLE DASHBOARD CHATBOT)     -->
+        <!-- ============================================================ -->
+        <div class="sub-screen" id="appScreenAI">
+          <!-- Top Bar: Back, Brand Sparkle Title & Reset Chat -->
+          <div class="screen-top-bar ai-top-bar">
+            <button class="icon-btn" onclick="navigateTo('home')" aria-label="Kembali" title="Kembali ke Beranda">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <div class="ai-screen-title-group">
+              <span class="ai-badge-status">● Asisten Cerdas Aktif</span>
+              <h3 class="screen-header-title">Berdikari AI</h3>
+            </div>
+            <button class="icon-btn" onclick="resetAiChat()" aria-label="Obrolan Baru" title="Mulai Obrolan Baru">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Chat Scroll Container -->
+          <div class="ai-screen-chat-flow" id="aiScreenChatFlow">
+            <!-- Welcome / Greeting State (shown initially or when reset) -->
+            <div class="ai-gemini-hero" id="aiGeminiHero">
+              <div class="gemini-sparkle-aura">
+                <div class="gemini-sparkle-center">
+                  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    <circle cx="9" cy="12" r="1" fill="#ffffff"/>
+                    <circle cx="12" cy="12" r="1" fill="#ffffff"/>
+                    <circle cx="15" cy="12" r="1" fill="#ffffff"/>
+                  </svg>
+                </div>
+              </div>
+              <h2 class="gemini-greeting-title">Halo, Rekan Berdikari</h2>
+              <p class="gemini-greeting-sub">Konsultasikan kebutuhan 12 divisi, tinjau berkas/desain kegiatan, atau diskusikan ide program kerja.</p>
+
+              <!-- Suggestion Prompt Cards with Clean SVG Icons -->
+              <div class="gemini-chips-grid">
+                <button class="gemini-chip" onclick="askAiScreenPrompt('Tolong jelaskan fokus dan tugas dari 12 divisi Langkah Berdikari')">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                  <span class="chip-text">Jelaskan 12 Divisi</span>
+                </button>
+                <button class="gemini-chip" onclick="askAiScreenPrompt('Bagaimana alur pendaftaran dan syarat rekrutmen anggota?')">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                  <span class="chip-text">Alur Rekrutmen</span>
+                </button>
+                <button class="gemini-chip" onclick="askAiScreenPrompt('Bagaimana cara pengajuan request desain poster ke Kominfo?')">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span class="chip-text">Request Desain</span>
+                </button>
+                <button class="gemini-chip" onclick="triggerAiImageUpload()">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <span class="chip-text">Upload Gambar/Desain</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Messages Stream -->
+            <div class="ai-stream-messages" id="aiStreamMessages">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Bottom Floating Prompt Box (Gemini Style) -->
+          <div class="gemini-prompt-footer">
+            <!-- Image Attachment Preview Strip -->
+            <div class="gemini-attachment-preview" id="aiImagePreviewContainer" style="display: none;">
+              <div class="preview-img-wrapper">
+                <img src="" id="aiImagePreviewThumb" alt="Preview Gambar" />
+                <button class="remove-preview-btn" onclick="removeAiImage()" title="Hapus Gambar">✕</button>
+              </div>
+              <div class="preview-info">
+                <span class="preview-name" id="aiImagePreviewName">gambar.jpg</span>
+                <span class="preview-hint">Gambar siap dianalisis oleh AI</span>
+              </div>
+            </div>
+
+            <!-- Hidden File Input for Images -->
+            <input type="file" id="aiImageFileInput" accept="image/*" style="display: none;" onchange="handleAiImageSelected(event)" />
+
+            <!-- Input Bar -->
+            <div class="gemini-input-bar">
+              <button class="gemini-tool-btn" onclick="triggerAiImageUpload()" title="Lampirkan Gambar atau Foto">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </button>
+
+              <textarea 
+                id="aiScreenPromptInput" 
+                class="gemini-textarea" 
+                placeholder="Tanya atau lampirkan gambar..." 
+                rows="1" 
+                oninput="autoResizeGeminiInput(this)" 
+                onkeydown="handleAiScreenKeyDown(event)"></textarea>
+
+              <button class="gemini-send-btn" id="btnSendAiPrompt" onclick="sendAiScreenPrompt()" title="Kirim Pesan">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- BOTTOM NAVIGATION BAR: CHATBOT AI DI TENGAH, CHAT DI 2 DARI  -->
+        <!-- KANAN, DAN STATISTIK DI PALING KANAN                         -->
+        <!-- ============================================================ -->
+        <div class="bottom-nav-container">
+          <!-- Center Button: CHATBOT AI (Berdikari AI Assistant) -->
+          <div class="bottom-fab-button ai-bot-fab" id="bottomNavAiFab" onclick="navigateTo('ai')" title="Berdikari AI Assistant">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L14.4 7.6L20 10L14.4 12.4L12 18L9.6 12.4L4 10L9.6 7.6L12 2Z" fill="#ffffff"/>
+              <path d="M19 15L20.2 17.8L23 19L20.2 20.2L19 23L17.8 20.2L15 19L17.8 17.8L19 15Z" fill="#ffffff" stroke-width="1.2"/>
+            </svg>
+            <span class="ai-fab-glow"></span>
+          </div>
+          
+          <nav class="bottom-nav-bar">
+            <!-- 1. Beranda (Kiri 1) -->
+            <button class="nav-item active" id="navItemHome" onclick="navigateTo('home')" aria-label="Beranda" title="Beranda">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              </svg>
+            </button>
+
+            <!-- 2. Form Divisi (Kiri 2) -->
+            <button class="nav-item" id="navItemDetail" onclick="navigateTo('detail')" aria-label="Form Divisi" title="Formulir Divisi">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </button>
+
+            <div class="nav-spacer"></div>
+
+            <!-- 3. Chat Divisi (2 DARI KANAN, TEPAT DI SAMPING STATISTIK) -->
+            <button class="nav-item" id="navItemChat" onclick="navigateTo('chat')" aria-label="Chat Divisi" title="Chat Divisi & Forum">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              <span class="nav-chat-dot"></span>
+            </button>
+
+            <!-- 4. Statistik (PALING KANAN) -->
+            <button class="nav-item" id="navItemStats" onclick="navigateTo('stats')" aria-label="Statistik" title="Statistik & Proker">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </button>
+          </nav>
+          <div class="phone-indicator"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal / Drawer: Semua 12 Divisi -->
+  <div class="voice-modal" id="allDivisionsModal">
+    <div class="voice-modal-card">
+      <h4>Pilih dari 12 Divisi Resmi</h4>
+      <p>Ketuk divisi untuk membuka formulir, tautan & chat:</p>
+      <div class="division-choice-stack scrollable" id="allDivisionsChoiceList">
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1BPH_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="BPH.png" class="drawer-div-logo" alt="BPH" />
+          <strong>BPH</strong> - <small>Badan Pengurus Harian & Tata Kelola Administrasi</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1PSDMK_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Psdmk.png" class="drawer-div-logo" alt="PSDMK" />
+          <strong>PSDMK</strong> - <small>Pengembangan Sumber Daya Mahasiswa & Kaderisasi</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1MEDBRAND_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Medbrand.png" class="drawer-div-logo" alt="Medbrand" />
+          <strong>Medbrand</strong> - <small>Media Informasi, Publikasi & Branding Kreatif</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1EKSMIT_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Eksmit.png" class="drawer-div-logo" alt="Eksmit" />
+          <strong>Eksmit</strong> - <small>Hubungan Eksternal, Kerjasama Lembaga & Kemitraan</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1KASTRAT_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Kastrat.png" class="drawer-div-logo" alt="Kastrat" />
+          <strong>Kastrat</strong> - <small>Kajian Isu Strategis, Advokasi Kebijakan & Pergerakan</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1RISTEK_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Ristek.png" class="drawer-div-logo" alt="Ristek" />
+          <strong>Ristek</strong> - <small>Penelitian Ilmiah, Inovasi & Pengembangan Teknologi</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1SOSLING_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Sosling.png" class="drawer-div-logo" alt="Sosling" />
+          <strong>Sosling</strong> - <small>Pengabdian Sosial, Kemanusiaan & Peduli Lingkungan</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1ADKESMAH_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="ADKESMAH.png" class="drawer-div-logo" alt="ADKESMAH" />
+          <strong>ADKESMAH</strong> - <small>Advokasi Mahasiswa, Finansial & Kesejahteraan Kampus</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1AKPRES_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Akpres.png" class="drawer-div-logo" alt="Akpres" />
+          <strong>Akpres</strong> - <small>Pengembangan Prestasi, Bimbingan Lomba & Akademik</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1DEPOR_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Depor.png" class="drawer-div-logo" alt="Depor" />
+          <strong>Depor</strong> - <small>Departemen Olahraga, Kebugaran & Turnamen Mahasiswa</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1SENBUD_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Senbud.png" class="drawer-div-logo" alt="Senbud" />
+          <strong>Senbud</strong> - <small>Apresiasi Seni, Budaya & Kreasi Mahasiswa</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://drive.google.com/drive/u/0/folders/1IMBANG_BEM" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="IMBANG.png" class="drawer-div-logo" alt="IMBANG" />
+          <strong>IMBANG</strong> - <small>Inkubasi Bisnis Mahasiswa, Manajemen Finansial & Usaha Mandiri</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+      </div>
+      <button class="voice-action-btn close" onclick="closeAllDivisionsSheet()">Tutup</button>
+    </div>
+  </div>
+
+  <!-- Modal: Login / Verifikasi Admin (Untuk Hapus Chat) -->
+  <div class="voice-modal" id="adminAuthModal">
+    <div class="voice-modal-card">
+      <div class="voice-pulse-ring" style="background: rgba(49, 72, 122, 0.15);">
+        <div class="voice-mic-icon" style="background: var(--primary-gradient);">
+          <span style="font-size: 22px;">🔑</span>
+        </div>
+      </div>
+      <h4 id="adminAuthModalTitle">Akses Khusus Admin</h4>
+      <p id="adminAuthModalDesc">Masukkan PIN Admin untuk mengaktifkan izin menghapus pesan anggota.</p>
+      <div class="admin-pin-box">
+        <input type="password" class="form-input" id="adminPinInput" placeholder="Masukkan PIN (Default: admin123)" />
+      </div>
+      <div class="voice-actions">
+        <button class="voice-action-btn" onclick="submitAdminPin()">Konfirmasi Masuk Admin</button>
+        <button class="voice-action-btn close" onclick="closeAdminAuthModal()">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Sukses Kirim Form -->
+  <div class="voice-modal" id="feedbackModal">
+    <div class="voice-modal-card">
+      <div class="voice-pulse-ring" style="background: rgba(16, 185, 129, 0.2);">
+        <div class="voice-mic-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+      </div>
+      <h4 id="feedbackModalTitle">Formulir Terkirim!</h4>
+      <p id="feedbackModalDesc">Terima kasih, permohonan Anda telah berhasil diterima dan akan segera ditindaklanjuti.</p>
+      <div class="voice-actions">
+        <button class="voice-action-btn" onclick="closeFeedbackModal()">Selesai & Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
