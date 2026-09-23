@@ -3,7 +3,7 @@
 const SYSTEM_INSTRUCTION = '';
 
 // Urutan model: coba yang pertama, kalau kena limit/overload pindah ke berikutnya.
-const MODELS = ['gemini-3.5-flash-lite', 'gemini-3.5-flash'];
+const MODELS = ['gemini-3.5-flash-lite'];
 
 const escapeHtml = s =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
