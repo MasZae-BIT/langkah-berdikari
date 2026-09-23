@@ -1,9 +1,3 @@
-/**
- * Langkah Berdikari - Mobile Web App Logic
- * 12 Divisi, Persistent Chat (2 dari Kanan), dan Chatbot AI di Tombol Tengah
- */
-
-// Database 12 Divisi Resmi BEM Langkah Berdikari
 const divisionsData = {
   bph: {
     key: 'bph',
@@ -12,7 +6,7 @@ const divisionsData = {
     fullName: 'Badan Pengurus Harian & Tata Kelola Administrasi',
     color: '#192338',
     logoImg: 'BPH.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1BPH_BEM',
+    href: 'https://ipb.link/report-card-1-bph',
     kpi: 96,
     kpiLabel: 'Keteraturan Arsip & Pengambilan Keputusan',
     activeForm: 'Formulir Permohonan Surat Resmi & Rekomendasi',
@@ -38,7 +32,7 @@ const divisionsData = {
     fullName: 'Pengembangan Sumber Daya Mahasiswa & Kaderisasi',
     color: '#31487A',
     logoImg: 'Psdmk.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1PSDMK_BEM',
+    href: 'https://ipb.link/report-card-1-psdmk',
     kpi: 94,
     kpiLabel: 'Target Kaderisasi & Pelatihan',
     activeForm: 'Formulir Pendaftaran & Rekrutmen Anggota',
@@ -65,7 +59,7 @@ const divisionsData = {
     fullName: 'Media Informasi, Publikasi & Branding Kreatif',
     color: '#EC8129',
     logoImg: 'Medbrand.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1MEDBRAND_BEM',
+    href: 'https://ipb.link/report-card-1-medbrand',
     kpi: 90,
     kpiLabel: 'Target Publikasi & Engagement',
     activeForm: 'Formulir Permohonan Desain & Publikasi Konten',
@@ -93,7 +87,7 @@ const divisionsData = {
     fullName: 'Hubungan Eksternal, Kerjasama Lembaga & Kemitraan',
     color: '#8FB3E2',
     logoImg: 'Eksmit.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1EKSMIT_BEM',
+    href: 'https://ipb.link/report-card-1-eksmit',
     kpi: 88,
     kpiLabel: 'Target Kolaborasi & Jejaring Eksternal',
     activeForm: 'Formulir Pengajuan Kemitraan & Sponsorship',
@@ -120,7 +114,7 @@ const divisionsData = {
     fullName: 'Kajian Isu Strategis, Advokasi Kebijakan & Pergerakan',
     color: '#1E2E4F',
     logoImg: 'Kastrat.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1KASTRAT_BEM',
+    href: 'https://ipb.link/report-card-1-kastrat',
     kpi: 92,
     kpiLabel: 'Target Kajian Isu & Rilis Sikap',
     activeForm: 'Formulir Usulan Isu & Kajian Kebijakan Publik',
@@ -146,7 +140,7 @@ const divisionsData = {
     fullName: 'Penelitian Ilmiah, Inovasi & Pengembangan Teknologi',
     color: '#31487A',
     logoImg: 'Ristek.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1RISTEK_BEM',
+    href: 'https://ipb.link/report-card-1-ristek',
     kpi: 90,
     kpiLabel: 'Target Riset & Publikasi Ilmiah',
     activeForm: 'Formulir Pengajuan Topik Riset & Inovasi Teknologi',
@@ -172,7 +166,7 @@ const divisionsData = {
     fullName: 'Pengabdian Sosial, Kemanusiaan & Peduli Lingkungan',
     color: '#8FB3E2',
     logoImg: 'Sosling.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1SOSLING_BEM',
+    href: 'https://ipb.link/report-card-1-sosling',
     kpi: 91,
     kpiLabel: 'Target Desa Binaan & Aksi Kemanusiaan',
     activeForm: 'Formulir Pendaftaran Relawan & Bantuan Sosial',
@@ -198,7 +192,7 @@ const divisionsData = {
     fullName: 'Advokasi Mahasiswa, Finansial & Kesejahteraan Kampus',
     color: '#EC8129',
     logoImg: 'ADKESMAH.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1ADKESMAH_BEM',
+    href: 'https://ipb.link/report-card-1-adkesmah',
     kpi: 88,
     kpiLabel: 'Penyelesaian Aspirasi & Advokasi Mahasiswa',
     activeForm: 'Formulir Layanan Advokasi & Aduan Mahasiswa',
@@ -223,7 +217,7 @@ const divisionsData = {
     fullName: 'Pengembangan Prestasi, Bimbingan Lomba & Akademik',
     color: '#31487A',
     logoImg: 'Akpres.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1AKPRES_BEM',
+    href: 'https://ipb.link/report-card-1-akpres',
     kpi: 93,
     kpiLabel: 'Pencapaian Prestasi & Delegasi Lomba',
     activeForm: 'Formulir Pendataan & Delegasi Kompetisi Prestasi',
@@ -250,7 +244,7 @@ const divisionsData = {
     fullName: 'Departemen Olahraga, Kebugaran & Turnamen Mahasiswa',
     color: '#EC8129',
     logoImg: 'Depor.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1DEPOR_BEM',
+    href: 'https://ipb.link/report-card-1-depor',
     kpi: 87,
     kpiLabel: 'Penyelenggaraan Turnamen & Kebugaran',
     activeForm: 'Formulir Pendaftaran Tim Olahraga & Turnamen',
@@ -277,7 +271,7 @@ const divisionsData = {
     fullName: 'Apresiasi Seni, Budaya & Kreasi Mahasiswa',
     color: '#FDE053',
     logoImg: 'Senbud.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1SENBUD_BEM',
+    href: 'https://ipb.link/report-card-1-senbud',
     kpi: 89,
     kpiLabel: 'Target Festival Seni & Kreasi Budaya',
     activeForm: 'Formulir Pengajuan Penampilan Seni & Kolaborasi',
@@ -303,7 +297,7 @@ const divisionsData = {
     fullName: 'Inkubasi Bisnis Mahasiswa, Manajemen Finansial & Usaha Mandiri',
     color: '#1E2E4F',
     logoImg: 'IMBANG.png',
-    href: 'https://drive.google.com/drive/u/0/folders/1IMBANG_BEM',
+    href: 'https://ipb.link/report-card-1-imbang',
     kpi: 85,
     kpiLabel: 'Target Omzet Usaha & Inkubasi Bisnis',
     activeForm: 'Formulir Pemesanan Merchandise & Pendanaan Bisnis',
@@ -324,17 +318,14 @@ const divisionsData = {
   }
 };
 
-// Application State
 let currentDivKey = 'bph';
 let currentScreen = 'home';
 let currentDivTab = 'form';
 let isAdmin = false;
 const ADMIN_PIN = 'admin123';
 
-// Chat State
 let chatChannelFilter = 'all';
 
-// Default Seeded Chats
 const initialSeedChats = [
   { id: 'msg-1', sender: 'Aditya Pratama', divKey: 'bph', text: 'Halo seluruh pengurus BEM! Rapat koordinasi akbar 12 divisi dijadwalkan Jumat malam via Zoom.', time: '09:15', date: '22/09/2026' },
   { id: 'msg-2', sender: 'Alya Rahmadhani', divKey: 'psdmk', text: 'Pendaftaran dan rekrutmen magang divisi telah resmi dibuka. Mohon seluruh biro dan departemen bersiap.', time: '09:28', date: '22/09/2026' },
@@ -342,7 +333,6 @@ const initialSeedChats = [
   { id: 'msg-4', sender: 'Reza Firmansyah', divKey: 'ristek', text: 'Sistem portal mobile web 12 divisi BEM telah terhubung penuh dengan database dan chatbot AI.', time: '09:42', date: '22/09/2026' }
 ];
 
-// Initialize on DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
   initLiveClock();
   initHomeDivisionsGrid();
@@ -355,15 +345,11 @@ document.addEventListener('DOMContentLoaded', () => {
   renderDivisionsLeaderboard();
 });
 
-/* ==========================================================================
-   1. HOME SCREEN: RENDER 12 DIVISI
-   ========================================================================== */
 function initHomeDivisionsGrid() {
   const container = document.getElementById('homeDivisionsGrid');
   const drawerList = document.getElementById('allDivisionsChoiceList');
   if (!container) return;
 
-  // If container already contains static cards in index.html, preserve them
   if (container.children.length === 0) {
     const keys = Object.keys(divisionsData);
     keys.forEach((key) => {
@@ -393,7 +379,6 @@ function initHomeDivisionsGrid() {
     });
   }
 
-  // If drawer list is empty, populate dynamically
   if (drawerList && drawerList.children.length === 0) {
     const keys = Object.keys(divisionsData);
     keys.forEach((key) => {
@@ -434,9 +419,6 @@ function initChannelDropdowns() {
   }
 }
 
-/* ==========================================================================
-   2. SCREEN NAVIGATION (Home, Detail, Chat, Stats, AI Gemini)
-   ========================================================================== */
 window.navigateTo = function(screenName) {
   currentScreen = screenName;
   const screens = {
@@ -492,9 +474,6 @@ window.openDivisionDetail = function(divKey) {
   navigateTo('detail');
 };
 
-/* ==========================================================================
-   3. DIVISION SELECTION & CONTENT POPULATION
-   ========================================================================== */
 window.selectDivision = function(divKey) {
   currentDivKey = divKey;
   const data = divisionsData[divKey] || divisionsData.psdm;
@@ -625,9 +604,6 @@ window.switchDivTab = function(tabName) {
   }
 };
 
-/* ==========================================================================
-   4. CHAT SYSTEM (PERSISTENT & ADMIN DELETION)
-   ========================================================================== */
 function initChatsStorage() {
   const saved = localStorage.getItem('lb_saved_chats');
   if (!saved) {
@@ -852,10 +828,7 @@ window.openGlobalChatWithDiv = function(divKey) {
   navigateTo('chat');
 };
 
-/* ==========================================================================
-   5. BERDIKARI AI (GEMINI ENGINE DASHBOARD CHATBOT)
-   ========================================================================== */
-let pendingAiImage = null; // { dataUrl: string, name: string }
+let pendingAiImage = null; 
 
 window.triggerAiImageUpload = function() {
   const fileInput = document.getElementById('aiImageFileInput');
@@ -925,10 +898,8 @@ window.sendAiScreenPrompt = function() {
 
   if (!promptText && !attachedImage) return;
 
-  // Hide initial welcome hero once conversation starts
   if (hero) hero.style.display = 'none';
 
-  // Create User Message
   const userMsg = document.createElement('div');
   userMsg.className = 'gemini-msg user';
   
@@ -950,25 +921,25 @@ window.sendAiScreenPrompt = function() {
   `;
   messagesContainer.appendChild(userMsg);
 
-  // Reset input & preview
   input.value = '';
   input.style.height = 'auto';
   removeAiImage();
 
   if (chatFlow) chatFlow.scrollTop = chatFlow.scrollHeight;
 
-  // Append Typing Indicator
+  const GEMINI_STAR_SVG = `
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2L14.4 7.6L20 10L14.4 12.4L12 18L9.6 12.4L4 10L9.6 7.6L12 2Z" fill="#FDE053" stroke="#EC8129"/>
+      <path d="M19 15L20.2 17.8L23 19L20.2 20.2L19 23L17.8 20.2L15 19L17.8 17.8L19 15Z" fill="#ffffff" stroke="#31487A" stroke-width="1.2"/>
+    </svg>
+  `;
+
   const typingMsg = document.createElement('div');
   typingMsg.className = 'gemini-msg bot typing';
   typingMsg.id = 'geminiTypingIndicator';
   typingMsg.innerHTML = `
     <div class="gemini-msg-avatar bot-avatar">
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="2">
-        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-        <circle cx="9" cy="12" r="1" fill="#ffffff"/>
-        <circle cx="12" cy="12" r="1" fill="#ffffff"/>
-        <circle cx="15" cy="12" r="1" fill="#ffffff"/>
-      </svg>
+      ${GEMINI_STAR_SVG}
     </div>
     <div class="gemini-msg-body">
       <div class="gemini-bubble bot-bubble typing-bubble">
@@ -981,31 +952,7 @@ window.sendAiScreenPrompt = function() {
   messagesContainer.appendChild(typingMsg);
   if (chatFlow) chatFlow.scrollTop = chatFlow.scrollHeight;
 
-  // Generate AI Response (via /api/chat -> Gemini)
-  (async () => {
-    let responseText;
-    try {
-      const body = { prompt: promptText };
-      if (attachedImage && attachedImage.dataUrl) {
-        const m = attachedImage.dataUrl.match(/^data:(.+?);base64,(.+)$/);
-        if (m) body.image = { mimeType: m[1], data: m[2] };
-      }
-      if (!body.prompt && body.image) body.prompt = 'Jelaskan gambar ini.';
-
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.details || data.error || 'Request gagal');
-      responseText = data.reply;
-    } catch (err) {
-      console.error('AI error:', err);
-      // fallback ke knowledge base lokal kalau API gagal
-      responseText = generateAiResponse(promptText.toLowerCase(), !!attachedImage);
-    }
-
+  const renderBotMsg = (replyContent) => {
     const indicator = document.getElementById('geminiTypingIndicator');
     if (indicator) indicator.remove();
 
@@ -1013,20 +960,57 @@ window.sendAiScreenPrompt = function() {
     botMsg.className = 'gemini-msg bot';
     botMsg.innerHTML = `
       <div class="gemini-msg-avatar bot-avatar">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="2">
-          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-          <circle cx="9" cy="12" r="1" fill="#ffffff"/>
-          <circle cx="12" cy="12" r="1" fill="#ffffff"/>
-          <circle cx="15" cy="12" r="1" fill="#ffffff"/>
-        </svg>
+        ${GEMINI_STAR_SVG}
       </div>
       <div class="gemini-msg-body">
-        <div class="gemini-bubble bot-bubble">${responseText}</div>
+        <div class="gemini-bubble bot-bubble">${replyContent}</div>
       </div>
     `;
     messagesContainer.appendChild(botMsg);
     if (chatFlow) chatFlow.scrollTop = chatFlow.scrollHeight;
-  })();
+  };
+
+  const fetchAiResponse = async () => {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 7500);
+
+      const payload = {
+        prompt: promptText,
+        image: attachedImage ? {
+          mimeType: attachedImage.type || 'image/png',
+          data: attachedImage.dataUrl.split(',')[1]
+        } : null
+      };
+
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.reply) {
+          return data.reply;
+        }
+      } else {
+        const errJson = await res.json().catch(() => null);
+        console.warn('API /api/chat error:', res.status, errJson);
+      }
+    } catch (e) {
+      console.warn('Fetch /api/chat error:', e);
+    }
+    return generateAiResponse(promptText.toLowerCase(), !!attachedImage);
+  };
+
+  fetchAiResponse().then(reply => {
+    renderBotMsg(reply);
+  }).catch(() => {
+    renderBotMsg(generateAiResponse(promptText.toLowerCase(), !!attachedImage));
+  });
 };
 
 window.resetAiChat = function() {
@@ -1043,31 +1027,39 @@ window.resetAiChat = function() {
   removeAiImage();
 };
 
-// Multimodal AI Knowledge Base
 function generateAiResponse(query, hasImage) {
   if (hasImage) {
-    if (query.includes('desain') || query.includes('poster') || query.includes('feed') || query.includes('konten') || query.includes('kominfo')) {
+    if (query.includes('desain') || query.includes('poster') || query.includes('feed') || query.includes('konten') || query.includes('medbrand') || query.includes('kominfo')) {
       return `Saya telah menganalisis desain gambar yang Anda lampirkan! 🎨<br><br>
       <strong>Hasil Review Visual & Keselarasan Brand:</strong><br>
       • <strong>Komposisi & Layout:</strong> Struktur visual rapi dengan titik fokus utama yang tegas.<br>
       • <strong>Palet Identitas:</strong> Selaras dengan warna tema resmi Langkah Berdikari (Navy & Tangerine Orange).<br>
       • <strong>Keterbacaan Mobile:</strong> Teks judul terbaca jelas, namun perhatikan teks catatan kecil pada layar smartphone.<br><br>
-      📌 Anda dapat langsung mengajukan publikasi melalui formulir di <strong>Divisi Kominfo & Kreatif</strong>.`;
+      📌 Anda dapat langsung mengajukan publikasi melalui formulir di <strong>Divisi Medbrand</strong>.`;
     }
 
     if (query.includes('proposal') || query.includes('lpj') || query.includes('surat') || query.includes('berkas') || query.includes('nota') || query.includes('bukti')) {
       return `Dokumen/berkas berhasil dipindai dan diidentifikasi! 📑<br><br>
       • <strong>Struktur Dokumen:</strong> Berkas terbaca dengan format penomoran dan isi yang teratur.<br>
       • <strong>Kelengkapan:</strong> Pastikan stempel atau tanda tangan resmi panitia telah tertera sebelum diajukan ke BPH.<br><br>
-      Silakan kirimkan berkas ini melalui tab <strong>Formulir</strong> pada divisi terkait (Divisi Acara untuk proposal kegiatan, atau Divisi Danus untuk bukti transaksi).`;
+      Silakan kirimkan berkas ini melalui tab <strong>Formulir</strong> pada divisi terkait (BPH untuk legalitas surat, atau IMBANG untuk bukti transaksi keuangan).`;
     }
 
     return `Gambar berhasil diterima dan dianalisis oleh Berdikari AI! 🔍<br><br>
     Saya telah mencatat gambar ini dalam sesi konsultasi. Ada aspek khusus yang ingin Anda diskusikan, misalnya mengenai kelayakan materi untuk divisi tertentu, panduan warna, atau penulisan konten?`;
   }
 
-  // Text-based Knowledge Base
-  if (query.includes('12 divisi') || query.includes('divisi apa saja') || query.includes('semua divisi')) {
+  if (query.includes('halo') || query.includes('hallo') || query.includes('hello') || query.includes('hai') || query.includes('hey') || query.includes('hei') || query.includes('assalamu') || query.includes('pagi') || query.includes('siang') || query.includes('sore') || query.includes('malam') || query.includes('siapa kamu') || query.includes('kamu siapa') || query.includes('siapa anda') || query.includes('bantuan') || query.includes('bisa apa') || query.includes('menu') || query.includes('fitur') || query.includes('tugasmu')) {
+    return `Halo! Saya <strong>Berdikari AI Assistant</strong>, asisten kecerdasan buatan resmi untuk <strong>BEM Langkah Berdikari</strong>. ✨<br><br>
+    Saya siap membantu Anda dengan informasi terpercaya seputar:<br>
+    • Penjelasan fokus & proker <strong>12 Divisi Resmi</strong><br>
+    • Alur pengajuan proposal, surat dinas BPH, dan LPJ kegiatan<br>
+    • Info rekrutmen pengurus (PSDMK) & pengajuan desain grafis (Medbrand)<br>
+    • Review berkas, poster, atau proposal yang Anda lampirkan.<br><br>
+    Ketikkan topik divisi atau kebutuhan Anda di bawah ini!`;
+  }
+
+  if (query.includes('12 divisi') || query.includes('divisi apa saja') || query.includes('semua divisi') || query.includes('daftar divisi')) {
     return `BEM Langkah Berdikari memiliki <strong>12 Divisi Resmi</strong>:<br>
     1. <strong>BPH</strong> (Badan Pengurus Harian & Administrasi)<br>
     2. <strong>PSDMK</strong> (Kaderisasi & Pengembangan SDM)<br>
@@ -1081,38 +1073,86 @@ function generateAiResponse(query, hasImage) {
     10. <strong>Depor</strong> (Departemen Olahraga & Turnamen)<br>
     11. <strong>Senbud</strong> (Apresiasi Seni & Budaya Mahasiswa)<br>
     12. <strong>IMBANG</strong> (Inkubasi Bisnis, Manajemen Finansial & Kas)<br><br>
-    Silakan ketuk divisi terkait di beranda untuk mengisi formulir atau mengakses berkas!`;
+    Silakan ketuk kartu divisi terkait di beranda untuk melihat link Report Card resminya!`;
   }
 
-  if (query.includes('ristek') || query.includes('riset') || query.includes('teknologi')) {
-    return `<strong>Departemen Ristek (Riset & Teknologi)</strong> berfokus pada penelitian ilmiah, inovasi teknologi digital, dan pengolahan data.<br><br>
-    🔬 <strong>Layanan & Formulir:</strong> Pengajuan Topik Riset & Inovasi Teknologi.<br>
+  if (query.includes('ristek') || query.includes('riset') || query.includes('teknologi') || query.includes('inovasi')) {
+    return `<strong>Departemen Ristek (Riset & Teknologi)</strong> berfokus pada penelitian ilmiah, inovasi teknologi digital, dan pengolahan data organisasi.<br><br>
+    🔬 <strong>Program Utama:</strong> Sistem Informasi Organisasi, Berdikari Data Portal, & Riset Kolaboratif Mahasiswa.<br>
     PIC Ristek: <strong>Kak Reza Firmansyah</strong>.`;
   }
 
-  if (query.includes('rekrutmen') || query.includes('daftar') || query.includes('gabung') || query.includes('psdmk')) {
-    return `Pendaftaran anggota baru dan kaderisasi dikoordinasikan oleh <strong>Biro PSDMK</strong>.<br><br>
-    📌 <strong>Cara Mendaftar:</strong><br>
-    1. Masuk ke menu <strong>Divisi PSDMK</strong> di Beranda.<br>
-    2. Buka tab <strong>Isi Form</strong>.<br>
-    3. Isi formulir pendaftaran anggota baru dan motivasi Anda.<br>
-    4. Narahubung PSDMK: <strong>Kak Alya Rahmadhani</strong>.`;
+  if (query.includes('rekrutmen') || query.includes('daftar') || query.includes('gabung') || query.includes('psdmk') || query.includes('kaderisasi') || query.includes('oprec')) {
+    return `Pendaftaran anggota baru dan kaderisasi dikoordinasikan langsung oleh <strong>Biro PSDMK</strong>.<br><br>
+    📌 <strong>Alur Rekrutmen:</strong><br>
+    1. Mengisi formulir pendaftaran anggota baru dan motivasi bergabung.<br>
+    2. Mengikuti sesi wawancara dan profiling minat divisi.<br>
+    3. Pelatihan kepemimpinan dasar mahasiswa.<br>
+    Narahubung PSDMK: <strong>Kak Alya Rahmadhani</strong>.`;
   }
 
-  if (query.includes('desain') || query.includes('medbrand') || query.includes('poster') || query.includes('feed')) {
-    return `Untuk permohonan desain grafis dan publikasi di media sosial, Anda dapat mengajukannya ke <strong>Biro Medbrand</strong>.<br><br>
-    🎨 <strong>Format yang Tersedia:</strong> Feed Instagram (1:1), Story (9:16), Poster A4, dan Video Reels/TikTok.<br>
+  if (query.includes('desain') || query.includes('medbrand') || query.includes('poster') || query.includes('feed') || query.includes('konten') || query.includes('publikasi') || query.includes('instagram')) {
+    return `Untuk permohonan desain grafis, publikasi media sosial, dan branding kegiatan, silakan ajukan ke <strong>Biro Medbrand</strong>.<br><br>
+    🎨 <strong>Format Desain yang Dilayani:</strong> Feed Instagram (1:1), Story (9:16), Poster Kegiatan (A4), dan Video Reels.<br>
     PIC Medbrand: <strong>Kak Fajar Pratama</strong>.`;
   }
 
-  if (query.includes('sponsor') || query.includes('mitra') || query.includes('eksmit') || query.includes('mou')) {
-    return `Pengajuan kemitraan, media partner, dan sponsorship ditangani oleh <strong>Departemen Eksmit</strong>.<br><br>
-    💼 Anda dapat mengunduh proposal kemitraan resmi pada tab <strong>SOP & Eval</strong> di halaman Departemen Eksmit.<br>
+  if (query.includes('sponsor') || query.includes('mitra') || query.includes('eksmit') || query.includes('mou') || query.includes('kemitraan')) {
+    return `Pengajuan kemitraan eksternal, media partner, dan sponsorship ditangani oleh <strong>Departemen Eksmit</strong>.<br><br>
+    💼 Anda dapat mengakses MoU resmi dan profil kemitraan organisasi melalui Report Card Eksmit.<br>
     PIC Eksmit: <strong>Kak Nabila Putri</strong>.`;
   }
 
+  if (query.includes('kastrat') || query.includes('kajian') || query.includes('isu') || query.includes('aksi') || query.includes('advokasi kebijakan')) {
+    return `<strong>Departemen Kastrat (Kajian & Aksi Strategis)</strong> mengkaji kebijakan kampus dan isu publik secara kritis dan solutif.<br><br>
+    📢 <strong>Fokus:</strong> Publikasi Kajian Berkala, Diskusi Publik, dan Konsolidasi Aspirasi Mahasiswa.<br>
+    PIC Kastrat: <strong>Kak Bima Perkasa</strong>.`;
+  }
+
+  if (query.includes('sosling') || query.includes('sosial') || query.includes('lingkungan') || query.includes('donasi') || query.includes('pengmas')) {
+    return `<strong>Departemen Sosling (Sosial & Lingkungan Hidup)</strong> bergerak di bidang pengabdian masyarakat, tanggap bencana, dan kepedulian lingkungan.<br><br>
+    🌱 <strong>Program:</strong> Berdikari Peduli Sesama, Gerakan Kampus Hijau, dan Bakti Sosial Komunitas.<br>
+    PIC Sosling: <strong>Kak Siti Nurhaliza</strong>.`;
+  }
+
+  if (query.includes('adkesmah') || query.includes('beasiswa') || query.includes('ukt') || query.includes('advokasi') || query.includes('kesejahteraan') || query.includes('keluhan')) {
+    return `<strong>Departemen ADKESMAH (Advokasi & Kesejahteraan Mahasiswa)</strong> mengawal hak-hak mahasiswa, keringanan UKT, beasiswa, dan pendampingan keluhan akademik.<br><br>
+    🛡️ <strong>Layanan:</strong> Posko Advokasi UKT, Pusat Informasi Beasiswa, dan Konseling Mahasiswa.<br>
+    PIC ADKESMAH: <strong>Kak Dimas Prasetyo</strong>.`;
+  }
+
+  if (query.includes('akpres') || query.includes('prestasi') || query.includes('lomba') || query.includes('kompetisi') || query.includes('delegasi')) {
+    return `<strong>Departemen Akpres (Akademik & Prestasi)</strong> mendampingi mahasiswa dalam mengikuti berbagai kejuaraan, PKM, dan kompetisi tingkat nasional maupun internasional.<br><br>
+    🏆 <strong>Fasilitas:</strong> Database Lomba Mahasiswa, Bimbingan Delegasi, dan Insentif Prestasi.<br>
+    PIC Akpres: <strong>Kak Indah Kusuma</strong>.`;
+  }
+
+  if (query.includes('depor') || query.includes('olahraga') || query.includes('turnamen') || query.includes('futsal') || query.includes('basket')) {
+    return `<strong>Departemen Depor (Departemen Olahraga)</strong> memfasilitasi kebugaran dan turnamen olahraga antar mahasiswa.<br><br>
+    ⚽ <strong>Event Utama:</strong> Berdikari Champions League, Sparring Rutin, dan Pekan Olahraga Mahasiswa.<br>
+    PIC Depor: <strong>Kak Rian Hidayat</strong>.`;
+  }
+
+  if (query.includes('senbud') || query.includes('seni') || query.includes('budaya') || query.includes('kreasi') || query.includes('musik')) {
+    return `<strong>Departemen Senbud (Seni & Budaya)</strong> mewadahi minat bakat seni, panggung ekspresi, dan pelestarian budaya kampus.<br><br>
+    🎭 <strong>Kegiatan:</strong> Festival Seni Mahasiswa, Panggung Kreasi Musik, dan Lokakarya Seni Tradisional.<br>
+    PIC Senbud: <strong>Kak Bagas Wicaksono</strong>.`;
+  }
+
+  if (query.includes('imbang') || query.includes('bisnis') || query.includes('wirausaha') || query.includes('merchandise') || query.includes('danus') || query.includes('finansial')) {
+    return `<strong>Departemen IMBANG (Inkubasi Bisnis & Finansial)</strong> mengelola merchandise resmi BEM, pendanaan mandiri, serta inkubasi bisnis rintisan mahasiswa.<br><br>
+    🛍️ <strong>Layanan:</strong> Pemesanan Official Merchandise, Bimbingan Wirausaha Muda, dan Pengelolaan Dana Mandiri.<br>
+    PIC IMBANG: <strong>Kak Dina Mariana</strong>.`;
+  }
+
+  if (query.includes('bph') || query.includes('proposal') || query.includes('surat') || query.includes('lpj') || query.includes('administrasi') || query.includes('sekretaris') || query.includes('bendahara')) {
+    return `<strong>BPH (Badan Pengurus Harian)</strong> mengelola roda administrasi inti, legalitas surat keputusan, penjadwalan audiensi, dan standarisasi proposal/LPJ.<br><br>
+    📑 <strong>Layanan Utama:</strong> Penerbitan Surat Dinas, Pengesahan Proposal Kegiatan, dan Evaluasi SOP.<br>
+    PIC BPH: <strong>Kak Aditya Pratama</strong>.`;
+  }
+
   if (query.includes('pic') || query.includes('kontak') || query.includes('narahubung') || query.includes('wa')) {
-    return `Berikut kontak pimpinan 12 divisi BEM:<br>
+    return `Berikut narahubung pimpinan 12 divisi BEM Langkah Berdikari:<br>
     • <strong>BPH:</strong> Kak Aditya<br>
     • <strong>PSDMK:</strong> Kak Alya<br>
     • <strong>Medbrand:</strong> Kak Fajar<br>
@@ -1124,20 +1164,22 @@ function generateAiResponse(query, hasImage) {
     • <strong>Akpres:</strong> Kak Indah<br>
     • <strong>Depor:</strong> Kak Rian<br>
     • <strong>Senbud:</strong> Kak Bagas<br>
-    • <strong>IMBANG:</strong> Kak Dina<br>
-    Buka tab <strong>Kontak</strong> pada detail divisi untuk langsung terhubung via WhatsApp!`;
+    • <strong>IMBANG:</strong> Kak Dina<br><br>
+    Silakan klik tautan Report Card masing-masing divisi di Beranda untuk terhubung langsung!`;
   }
 
-  if (query.includes('proposal') || query.includes('surat') || query.includes('bph')) {
-    return `Permohonan surat resmi, surat tugas, rekomendasi rektorat, atau legalitas kegiatan dikelola oleh <strong>BPH (Badan Pengurus Harian)</strong> dengan narahubung <strong>Kak Aditya Pratama</strong>.`;
+  if (query.includes('bem') || query.includes('berdikari') || query.includes('organisasi') || query.includes('mahasiswa') || query.includes('kampus') || query.includes('proker') || query.includes('kegiatan')) {
+    return `Terima kasih telah berkonsultasi mengenai <strong>BEM Langkah Berdikari</strong>! ✨<br><br>
+    Anda dapat menelusuri 12 divisi resmi, memeriksa program kerja, atau membaca SOP dan Report Card langsung dari halaman Beranda. Ada nama divisi atau program kerja tertentu yang ingin Anda tanyakan lebih rinci?`;
   }
 
-  return `Terima kasih atas pertanyaan Anda! Untuk urusan operasional, silakan gunakan formulir divisi terkait pada tab <strong>Formulir</strong> atau diskusikan di saluran <strong>Chat Divisi</strong>. Ada informasi spesifik lain yang Anda butuhkan?`;
+  if (query.includes('prabowo')) {
+    return `<strong>Prabowo Subianto</strong> adalah Presiden Republik Indonesia ke-8 yang mulai menjabat sejak 20 Oktober 2024. ✨`;
+  }
+
+  return `Pertanyaan Anda telah diterima: "<strong>${query}</strong>". Berdikari AI siap membantu menjawab pertanyaan Anda tanpa batasan. ✨`;
 }
 
-/* ==========================================================================
-   6. ADMIN MODE AUTHENTICATION (PIN VERIFICATION)
-   ========================================================================== */
 window.toggleAdminPrompt = function() {
   if (isAdmin) {
     if (confirm('Nonaktifkan Mode Admin dan kembali ke Mode Member biasa?')) {
@@ -1201,9 +1243,6 @@ function updateAdminUI() {
   renderInlineChat(currentDivKey);
 }
 
-/* ==========================================================================
-   7. THERMOSTAT / KPI DIAL (Interactive Dragging)
-   ========================================================================== */
 function initThermostatDials() {
   const dialInteractive = document.getElementById('dialContainerInteractive');
   if (dialInteractive) setupDialDragging(dialInteractive);
@@ -1294,9 +1333,6 @@ function updateDialArc(percentage) {
   });
 }
 
-/* ==========================================================================
-   7b. STATISTIK & LEADERBOARD 12 DIVISI
-   ========================================================================== */
 let currentStatsPeriod = 'year';
 let currentStatsChartMetric = 'participants';
 
@@ -1361,7 +1397,6 @@ window.switchStatsPeriod = function(period) {
   currentStatsPeriod = period;
   const pData = statsDataByPeriod[period] || statsDataByPeriod.year;
 
-  // Update tabs active state
   ['month', 'semester', 'year'].forEach(p => {
     const btn = document.getElementById(`btnPeriod_${p}`);
     if (btn) {
@@ -1370,7 +1405,6 @@ window.switchStatsPeriod = function(period) {
     }
   });
 
-  // Update KPI displays
   const elPart = document.getElementById('statValParticipants');
   const elPartGrow = document.getElementById('statGrowParticipants');
   const elProker = document.getElementById('statValProker');
@@ -1420,7 +1454,6 @@ window.renderDivisionsLeaderboard = function() {
   const container = document.getElementById('statsDivisionsLeaderboard');
   if (!container) return;
 
-  // Sort divisions by KPI descending
   const sorted = Object.entries(divisionsData).sort((a, b) => b[1].kpi - a[1].kpi);
 
   container.innerHTML = sorted.map(([key, div], idx) => {
@@ -1470,9 +1503,6 @@ window.downloadStatsReport = function() {
   alert('📥 LAPORAN RESMI DISIAPKAN:\\n\\nRekapitulasi Kinerja & Akuntabilitas 12 Divisi Langkah Berdikari Periode 2026/2027 berhasil diekspor.\\n\\n• Status: Terverifikasi BPH\\n• Total Program Kerja: 36\\n• Tingkat Ketercapaian: 88.9%\\n\\nBerkas format PDF & Spreadsheet telah diunduh.');
 };
 
-/* ==========================================================================
-   8. FORM SUBMISSION & FEEDBACK MODAL
-   ========================================================================== */
 window.handleFormSubmit = function(e) {
   e.preventDefault();
   const form = e.target;
@@ -1494,9 +1524,6 @@ window.closeFeedbackModal = function() {
   if (modal) modal.classList.remove('active');
 };
 
-/* ==========================================================================
-   9. MODALS & UTILITIES
-   ========================================================================== */
 window.openAllDivisionsSheet = function() {
   const modal = document.getElementById('allDivisionsModal');
   if (modal) modal.classList.add('active');
@@ -1538,3 +1565,228 @@ function escapeHTML(str) {
     tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
   );
 }
+
+let pendingDesktopAiImage = null;
+
+window.toggleViewMode = function() {
+  document.body.classList.toggle('force-mobile-view');
+  const isMobile = document.body.classList.contains('force-mobile-view');
+  const labelEl = document.getElementById('viewModeToggleLabel');
+  if (labelEl) {
+    labelEl.textContent = isMobile ? '💻 Tampilan PC (Figma)' : '📱 Pratinjau Ponsel';
+  }
+};
+
+window.toggleDesktopAiChat = function() {
+  const modal = document.getElementById('desktopAiModal');
+  if (!modal) return;
+  modal.classList.toggle('open');
+  if (modal.classList.contains('open')) {
+    const input = document.getElementById('desktopAiPromptInput');
+    if (input) setTimeout(() => input.focus(), 150);
+  }
+};
+
+window.closeDesktopAiChat = function() {
+  const modal = document.getElementById('desktopAiModal');
+  if (modal) modal.classList.remove('open');
+};
+
+window.openDesktopAiChat = function() {
+  const modal = document.getElementById('desktopAiModal');
+  if (!modal) return;
+  modal.classList.add('open');
+  const input = document.getElementById('desktopAiPromptInput');
+  if (input) setTimeout(() => input.focus(), 150);
+};
+
+window.triggerDesktopAiImageUpload = function() {
+  const fileInput = document.getElementById('desktopAiImageFileInput');
+  if (fileInput) fileInput.click();
+};
+
+window.handleDesktopAiImageSelect = function(e) {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+
+  if (!file.type.startsWith('image/')) {
+    alert('Silakan pilih file gambar (JPG, PNG, WebP).');
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(evt) {
+    pendingDesktopAiImage = {
+      name: file.name,
+      type: file.type,
+      dataUrl: evt.target.result
+    };
+    const previewContainer = document.getElementById('desktopAiImgPreview');
+    const previewImg = document.getElementById('desktopAiImgPreviewSrc');
+    if (previewImg) previewImg.src = evt.target.result;
+    if (previewContainer) previewContainer.style.display = 'flex';
+  };
+  reader.readAsDataURL(file);
+};
+
+window.removeDesktopAiImage = function() {
+  pendingDesktopAiImage = null;
+  const fileInput = document.getElementById('desktopAiImageFileInput');
+  if (fileInput) fileInput.value = '';
+  const previewContainer = document.getElementById('desktopAiImgPreview');
+  if (previewContainer) previewContainer.style.display = 'none';
+};
+
+window.resetDesktopAiChat = function() {
+  const messagesContainer = document.getElementById('desktopAiStreamMessages');
+  const welcome = document.getElementById('desktopAiWelcome');
+  const input = document.getElementById('desktopAiPromptInput');
+
+  if (messagesContainer) messagesContainer.innerHTML = '';
+  if (welcome) welcome.style.display = 'block';
+  if (input) {
+    input.value = '';
+    input.style.height = 'auto';
+  }
+  removeDesktopAiImage();
+};
+
+window.askDesktopAiPrompt = function(promptText) {
+  const input = document.getElementById('desktopAiPromptInput');
+  if (input) {
+    input.value = promptText;
+  }
+  sendDesktopAiPrompt();
+};
+
+window.handleDesktopAiKeyDown = function(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendDesktopAiPrompt();
+  }
+};
+
+window.sendDesktopAiPrompt = function() {
+  const input = document.getElementById('desktopAiPromptInput');
+  const messagesContainer = document.getElementById('desktopAiStreamMessages');
+  const chatFlow = document.getElementById('desktopAiChatFlow');
+  const welcome = document.getElementById('desktopAiWelcome');
+  if (!input || !messagesContainer) return;
+
+  const promptText = input.value.trim();
+  const attachedImage = pendingDesktopAiImage;
+
+  if (!promptText && !attachedImage) return;
+
+  if (welcome) welcome.style.display = 'none';
+
+  const userMsg = document.createElement('div');
+  userMsg.className = 'desktop-ai-msg user';
+
+  let imageHTML = '';
+  if (attachedImage) {
+    imageHTML = `
+      <div class="desktop-user-img-wrap">
+        <img src="${attachedImage.dataUrl}" alt="${escapeHTML(attachedImage.name)}" class="desktop-user-img" onclick="window.open(this.src, '_blank')" title="Ketuk untuk melihat ukuran penuh" />
+      </div>
+    `;
+  }
+
+  userMsg.innerHTML = `
+    <div class="desktop-ai-msg-avatar user-avatar">👤</div>
+    <div class="desktop-ai-bubble user-bubble">
+      ${imageHTML}
+      ${promptText ? `<div>${escapeHTML(promptText)}</div>` : ''}
+    </div>
+  `;
+  messagesContainer.appendChild(userMsg);
+
+  input.value = '';
+  input.style.height = 'auto';
+  removeDesktopAiImage();
+
+  if (chatFlow) chatFlow.scrollTop = chatFlow.scrollHeight;
+
+  const STAR_SVG = `
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2L14.4 7.6L20 10L14.4 12.4L12 18L9.6 12.4L4 10L9.6 7.6L12 2Z" fill="#FDE053" stroke="#EC8129"/>
+      <path d="M19 15L20.2 17.8L23 19L20.2 20.2L19 23L17.8 20.2L15 19L17.8 17.8L19 15Z" fill="#ffffff" stroke="#31487A" stroke-width="1.2"/>
+    </svg>
+  `;
+
+  const typingMsg = document.createElement('div');
+  typingMsg.className = 'desktop-ai-msg bot typing';
+  typingMsg.id = 'desktopAiTypingIndicator';
+  typingMsg.innerHTML = `
+    <div class="desktop-ai-msg-avatar bot-avatar">
+      ${STAR_SVG}
+    </div>
+    <div class="desktop-ai-bubble bot-bubble">
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+    </div>
+  `;
+  messagesContainer.appendChild(typingMsg);
+  if (chatFlow) chatFlow.scrollTop = chatFlow.scrollHeight;
+
+  const renderBotMsg = (replyContent) => {
+    const indicator = document.getElementById('desktopAiTypingIndicator');
+    if (indicator) indicator.remove();
+
+    const botMsg = document.createElement('div');
+    botMsg.className = 'desktop-ai-msg bot';
+    botMsg.innerHTML = `
+      <div class="desktop-ai-msg-avatar bot-avatar">
+        ${STAR_SVG}
+      </div>
+      <div class="desktop-ai-bubble bot-bubble">
+        ${replyContent}
+      </div>
+    `;
+    messagesContainer.appendChild(botMsg);
+    if (chatFlow) chatFlow.scrollTop = chatFlow.scrollHeight;
+  };
+
+  const fetchDesktopAi = async () => {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 7500);
+
+      const payload = {
+        prompt: promptText,
+        image: attachedImage ? {
+          mimeType: attachedImage.type || 'image/png',
+          data: attachedImage.dataUrl.split(',')[1]
+        } : null
+      };
+
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.reply) {
+          return data.reply;
+        }
+      } else {
+        const errJson = await res.json().catch(() => null);
+        console.warn('Desktop API /api/chat error:', res.status, errJson);
+      }
+    } catch (e) {
+      console.warn('Desktop Fetch /api/chat error:', e);
+    }
+    return generateAiResponse(promptText.toLowerCase(), !!attachedImage);
+  };
+
+  fetchDesktopAi().then(reply => {
+    renderBotMsg(reply);
+  }).catch(() => {
+    renderBotMsg(generateAiResponse(promptText.toLowerCase(), !!attachedImage));
+  });
+};
