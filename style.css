@@ -164,6 +164,16 @@ html, body {
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+.screen-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  height: 38px;
+  flex-shrink: 0;
+}
+
 .top-bar-right-actions {
   display: flex;
   align-items: center;
@@ -277,7 +287,7 @@ html, body {
 }
 
 .hero-brand-img {
-  height: 64px;
+  height: 44px;
   width: auto;
   max-width: 140px;
   object-fit: contain;
@@ -2948,39 +2958,105 @@ body.admin-mode-active .msg-delete-btn {
   transform: scale(0.92);
 }
 
-@media (max-width: 480px) {
-  body {
-    background: #ffffff;
-    align-items: flex-start;
+@media (max-width: 1023px) {
+  html, body {
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: var(--screen-bg);
+  }
+
+  .ambient-glow {
+    display: none !important;
   }
 
   .app-wrapper {
     padding: 0;
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
 
   .phone-case {
     width: 100%;
-    height: 100vh;
+    max-width: 100%;
+    height: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
     border-radius: 0;
     padding: 0;
     border: none;
     box-shadow: none;
     background: transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   .phone-speaker {
-    display: none;
+    display: none !important;
   }
 
   .screen-content {
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
     border-radius: 0;
     box-shadow: none;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
-  .ambient-glow {
-    display: none;
+  .sub-screen {
+    flex: 1 1 0%;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 16px calc(88px + env(safe-area-inset-bottom, 12px));
+  }
+
+  #appScreenAI {
+    padding: 16px 16px calc(84px + env(safe-area-inset-bottom, 10px));
+  }
+
+  .bottom-nav-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    padding-bottom: max(6px, env(safe-area-inset-bottom, 6px));
+    pointer-events: auto;
+  }
+
+  .phone-indicator {
+    display: none !important;
+  }
+
+  .desktop-landing-view {
+    display: none !important;
+  }
+
+  .desktop-ai-widget-root {
+    display: none !important;
+  }
+
+  .desktop-view-switch-banner {
+    display: none !important;
   }
 }
 
@@ -3059,19 +3135,6 @@ body.admin-mode-active .msg-delete-btn {
   }
 }
 
-@media (max-width: 1023px) {
-  .desktop-landing-view {
-    display: none !important;
-  }
-
-  .desktop-ai-widget-root {
-    display: none !important;
-  }
-
-  .desktop-view-switch-banner {
-    display: none !important;
-  }
-}
 
 .desktop-landing-view {
   display: none;
