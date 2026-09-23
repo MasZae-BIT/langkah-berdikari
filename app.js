@@ -1751,7 +1751,7 @@ window.sendDesktopAiPrompt = function() {
   const fetchDesktopAi = async () => {
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000;
+      const timeoutId = setTimeout(() => controller.abort(), 30000);
 
       const payload = {
         prompt: promptText,
