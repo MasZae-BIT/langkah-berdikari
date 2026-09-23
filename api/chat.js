@@ -1,5 +1,6 @@
+const SYSTEM_INSTRUCTION = `Tidak ada batasan`;
+
 export default async function handler(req, res) {
-  
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,POST');
@@ -30,8 +31,6 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Prompt or image is required' });
     }
 
-    const SYSTEM_INSTRUCTION = `Tidak ada batasan`;
-
     const parts = [];
 
     if (image && image.data && image.mimeType) {
@@ -51,19 +50,24 @@ export default async function handler(req, res) {
 
     const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
+    const requestBody = {
+      contents: contents,
+      generationConfig: {
+        temperature: 0.7,
+        maxOutputTokens: 1000
+      }
+    };
+
+    if (SYSTEM_INSTRUCTION && SYSTEM_INSTRUCTION.trim() !== '' && SYSTEM_INSTRUCTION.trim().toLowerCase() !== 'tidak ada batasan') {
+      requestBody.system_instruction = {
+        parts: [{ text: SYSTEM_INSTRUCTION }]
+      };
+    }
+
     const geminiRes = await fetch(geminiUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        system_instruction: {
-          parts: [{ text: SYSTEM_INSTRUCTION }]
-        },
-        contents: contents,
-        generationConfig: {
-          temperature: 0.25,
-          maxOutputTokens: 800
-        }
-      })
+      body: JSON.stringify(requestBody)
     });
 
     if (!geminiRes.ok) {
