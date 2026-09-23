@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Langkah Berdikari</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <div class="app-wrapper">
+    <div class="phone-case">
+      <div class="phone-speaker"></div>
+
+      <div class="screen-content" id="phoneAppContainer">
+
+        <div class="sub-screen active" id="appScreenHome">
+          
+          <div class="screen-top-bar">
+            <div class="top-bar-right-actions">
+            </div>
+          </div>
+
+          <div class="brand-hero-section">
+            <div class="brand-logo-card">
+              <img src="logo.png" alt="Logo Langkah Berdikari" class="hero-brand-img" />
+            </div>
+            
+            <div class="greeting-box">
+              <span class="greeting-sub">Selamat Datang di</span>
+              <h2 class="app-hero-title">Langkah Berdikari</h2>
+              <span class="greeting-time" id="appLiveClock">09:57</span>
+            </div>
+          </div>
+
+          <div class="section-label-row">
+            <h3 class="section-title">Daftar Divisi (12)</h3>
+            <button class="view-all-btn" onclick="openAllDivisionsSheet()">
+              <span>Semua Divisi</span>
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="room-grid" id="homeDivisionsGrid">
+            
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-bph" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="BPH.png" class="division-card-logo" alt="BPH Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">BPH</h4>
+                <span class="division-subtitle">Sekretariat & Inti</span>
+                <span class="division-count-pill">6 Pengurus</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-psdmk" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Psdmk.png" class="division-card-logo" alt="PSDMK Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">PSDMK</h4>
+                <span class="division-subtitle">Kaderisasi & SDM</span>
+                <span class="division-count-pill">14 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-medbrand" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Medbrand.png" class="division-card-logo" alt="Medbrand Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Medbrand</h4>
+                <span class="division-subtitle">Media & Branding</span>
+                <span class="division-count-pill">12 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-eksmit" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Eksmit.png" class="division-card-logo" alt="Eksmit Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Eksmit</h4>
+                <span class="division-subtitle">Eksternal & Kemitraan</span>
+                <span class="division-count-pill">10 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-kastrat" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Kastrat.png" class="division-card-logo" alt="Kastrat Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Kastrat</h4>
+                <span class="division-subtitle">Kajian & Strategis</span>
+                <span class="division-count-pill">11 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-ristek" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Ristek.png" class="division-card-logo" alt="Ristek Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Ristek</h4>
+                <span class="division-subtitle">Riset & Teknologi</span>
+                <span class="division-count-pill">10 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-sosling" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Sosling.png" class="division-card-logo" alt="Sosling Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Sosling</h4>
+                <span class="division-subtitle">Sosial & Lingkungan</span>
+                <span class="division-count-pill">16 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-adkesmah" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="ADKESMAH.png" class="division-card-logo" alt="ADKESMAH Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">ADKESMAH</h4>
+                <span class="division-subtitle">Advokasi Mahasiswa</span>
+                <span class="division-count-pill">9 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-akpres" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Akpres.png" class="division-card-logo" alt="Akpres Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Akpres</h4>
+                <span class="division-subtitle">Akademik & Prestasi</span>
+                <span class="division-count-pill">8 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-depor" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Depor.png" class="division-card-logo" alt="Depor Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Depor</h4>
+                <span class="division-subtitle">Olahraga & Turnamen</span>
+                <span class="division-count-pill">13 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-senbud" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="Senbud.png" class="division-card-logo" alt="Senbud Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">Senbud</h4>
+                <span class="division-subtitle">Seni & Budaya</span>
+                <span class="division-count-pill">15 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+
+            <a class="room-card card-glass division-link-item" href="https://ipb.link/report-card-1-imbang" target="_blank" rel="noopener noreferrer">
+              <div class="division-logo-slot">
+                <img src="IMBANG.png" class="division-card-logo" alt="IMBANG Logo" />
+              </div>
+              <div class="division-text-info">
+                <h4 class="division-title">IMBANG</h4>
+                <span class="division-subtitle">Inkubasi & Bisnis</span>
+                <span class="division-count-pill">9 Anggota</span>
+              </div>
+              <div class="division-card-arrow">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="sub-screen" id="appScreenDetail">
+          
+          <div class="screen-top-bar">
+            <button class="icon-btn" onclick="navigateTo('home')" aria-label="Kembali">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <h3 class="screen-header-title" id="activeDivTitle">Portal Divisi</h3>
+            <div style="width: 38px;"></div>
+          </div>
+
+          <div class="blank-screen-container"></div>
+        </div>
+
+        <div class="sub-screen" id="appScreenChat">
+          
+          <div class="screen-top-bar">
+            <button class="icon-btn" onclick="navigateTo('home')" aria-label="Kembali">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <h3 class="screen-header-title">Chat & Diskusi Divisi</h3>
+            <div style="width: 38px;"></div>
+          </div>
+
+          <div class="blank-screen-container"></div>
+        </div>
+
+        <div class="sub-screen" id="appScreenStats">
+          
+          <div class="screen-top-bar">
+            <button class="icon-btn" onclick="navigateTo('home')" aria-label="Kembali">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <h3 class="screen-header-title">Statistik & Kinerja</h3>
+            <div style="width: 38px;"></div>
+          </div>
+
+          <div class="blank-screen-container"></div>
+        </div>
+
+        <div class="sub-screen" id="appScreenAI">
+          
+          <div class="screen-top-bar ai-top-bar">
+            <button class="icon-btn" onclick="navigateTo('home')" aria-label="Kembali" title="Kembali ke Beranda">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <div class="ai-screen-title-group">
+              <span class="ai-badge-status">● Asisten Cerdas Aktif</span>
+              <h3 class="screen-header-title">Berdikari AI</h3>
+            </div>
+            <button class="icon-btn" onclick="resetAiChat()" aria-label="Obrolan Baru" title="Mulai Obrolan Baru">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="ai-screen-chat-flow" id="aiScreenChatFlow">
+            
+            <div class="ai-gemini-hero" id="aiGeminiHero">
+              <div class="gemini-sparkle-aura">
+                <div class="gemini-sparkle-center">
+                  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L14.4 7.6L20 10L14.4 12.4L12 18L9.6 12.4L4 10L9.6 7.6L12 2Z" fill="#FDE053" stroke="#EC8129"/>
+                    <path d="M19 15L20.2 17.8L23 19L20.2 20.2L19 23L17.8 20.2L15 19L17.8 17.8L19 15Z" fill="#ffffff" stroke="#31487A" stroke-width="1.2"/>
+                  </svg>
+                </div>
+              </div>
+              <h2 class="gemini-greeting-title">Halo, Rekan Berdikari</h2>
+              <p class="gemini-greeting-sub">Konsultasikan kebutuhan 12 divisi, tinjau berkas/desain kegiatan, atau diskusikan ide program kerja.</p>
+
+              <div class="gemini-chips-grid">
+                <button class="gemini-chip" onclick="askAiScreenPrompt('Tolong jelaskan fokus dan tugas dari 12 divisi Langkah Berdikari')">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                  <span class="chip-text">Jelaskan 12 Divisi</span>
+                </button>
+                <button class="gemini-chip" onclick="askAiScreenPrompt('Bagaimana alur pendaftaran dan syarat rekrutmen anggota?')">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                  <span class="chip-text">Alur Rekrutmen</span>
+                </button>
+                <button class="gemini-chip" onclick="askAiScreenPrompt('Bagaimana cara pengajuan request desain poster ke Kominfo?')">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span class="chip-text">Request Desain</span>
+                </button>
+                <button class="gemini-chip" onclick="triggerAiImageUpload()">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <span class="chip-text">Upload Gambar/Desain</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="ai-stream-messages" id="aiStreamMessages">
+              
+            </div>
+          </div>
+
+          <div class="gemini-prompt-footer">
+            
+            <div class="gemini-attachment-preview" id="aiImagePreviewContainer" style="display: none;">
+              <div class="preview-img-wrapper">
+                <img src="" id="aiImagePreviewThumb" alt="Preview Gambar" />
+                <button class="remove-preview-btn" onclick="removeAiImage()" title="Hapus Gambar">✕</button>
+              </div>
+              <div class="preview-info">
+                <span class="preview-name" id="aiImagePreviewName">gambar.jpg</span>
+                <span class="preview-hint">Gambar siap dianalisis oleh AI</span>
+              </div>
+            </div>
+
+            <input type="file" id="aiImageFileInput" accept="image/*" style="display: none;" onchange="handleAiImageSelected(event)" />
+
+            <div class="gemini-input-bar">
+              <button class="gemini-tool-btn" onclick="triggerAiImageUpload()" title="Lampirkan Gambar atau Foto">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </button>
+
+              <textarea 
+                id="aiScreenPromptInput" 
+                class="gemini-textarea" 
+                placeholder="Tanya atau lampirkan gambar..." 
+                rows="1" 
+                oninput="autoResizeGeminiInput(this)" 
+                onkeydown="handleAiScreenKeyDown(event)"></textarea>
+
+              <button class="gemini-send-btn" id="btnSendAiPrompt" onclick="sendAiScreenPrompt()" title="Kirim Pesan">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-nav-container">
+          
+          <div class="bottom-fab-button ai-bot-fab" id="bottomNavAiFab" onclick="navigateTo('ai')" title="Berdikari AI Assistant">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L14.4 7.6L20 10L14.4 12.4L12 18L9.6 12.4L4 10L9.6 7.6L12 2Z" fill="#ffffff"/>
+              <path d="M19 15L20.2 17.8L23 19L20.2 20.2L19 23L17.8 20.2L15 19L17.8 17.8L19 15Z" fill="#ffffff" stroke-width="1.2"/>
+            </svg>
+            <span class="ai-fab-glow"></span>
+          </div>
+          
+          <nav class="bottom-nav-bar">
+            
+            <button class="nav-item active" id="navItemHome" onclick="navigateTo('home')" aria-label="Beranda" title="Beranda">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              </svg>
+            </button>
+
+            <button class="nav-item" id="navItemDetail" onclick="navigateTo('detail')" aria-label="Form Divisi" title="Formulir Divisi">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </button>
+
+            <div class="nav-spacer"></div>
+
+            <button class="nav-item" id="navItemChat" onclick="navigateTo('chat')" aria-label="Chat Divisi" title="Chat Divisi & Forum">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              <span class="nav-chat-dot"></span>
+            </button>
+
+            <button class="nav-item" id="navItemStats" onclick="navigateTo('stats')" aria-label="Statistik" title="Statistik & Proker">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </button>
+          </nav>
+          <div class="phone-indicator"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="desktop-view-switch-banner" id="desktopViewSwitchBanner" onclick="toggleViewMode()" title="Kembali ke Tampilan Penuh PC">
+    <span>💻 Mode Pratinjau Ponsel • <strong>Ketuk untuk Kembali ke Tampilan PC (Figma 1440px)</strong> ↗</span>
+  </div>
+
+  <div class="desktop-landing-view" id="desktopLandingView">
+    <div class="desktop-glow-orb desktop-orb-1"></div>
+    <div class="desktop-glow-orb desktop-orb-2"></div>
+    <div class="desktop-glow-orb desktop-orb-3"></div>
+    <div class="desktop-glow-orb desktop-orb-4"></div>
+
+    <div class="desktop-figma-container">
+      <header class="desktop-header-bar">
+        <div class="desktop-logo-wrap">
+          <img src="logo.png" alt="Langkah Berdikari" class="desktop-main-logo" />
+        </div>
+        <div class="desktop-menu-icon" onclick="openAllDivisionsSheet()" title="Menu Divisi">
+          <div class="menu-bar"></div>
+          <div class="menu-bar"></div>
+          <div class="menu-bar"></div>
+        </div>
+      </header>
+
+      <div class="desktop-title-section">
+        <span class="desktop-sub-welcome">Selamat datang di</span>
+        <h1 class="desktop-main-title">Raporan Langkari Berdikari</h1>
+      </div>
+
+      <div class="desktop-section-title-wrap">
+        <h2 class="desktop-section-heading">Nama Divisi</h2>
+      </div>
+
+      <div class="desktop-cards-grid">
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-bph" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="BPH.png" class="dcard-logo-img" alt="BPH" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">BPH</h3>
+            <p class="dcard-subtitle">Badan Pengurus Harian</p>
+            <span class="dcard-pill">8 Pengurus</span>
+          </div>
+        </a>
+
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-ristek" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="Ristek.png" class="dcard-logo-img" alt="Ristek" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">Ristek</h3>
+            <p class="dcard-subtitle">Riset dan Teknologi</p>
+            <span class="dcard-pill">7 Pengurus</span>
+          </div>
+        </a>
+
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-eksmit" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="Eksmit.png" class="dcard-logo-img" alt="Eksmit" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">Eksmit</h3>
+            <p class="dcard-subtitle">Eksternal, Relasi dan Kemitraan</p>
+            <span class="dcard-pill">8 Pengurus</span>
+          </div>
+        </a>
+
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-imbang" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="IMBANG.png" class="dcard-logo-img" alt="Imbang" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">Imbang</h3>
+            <p class="dcard-subtitle">Inkubasi dan Pengembangan</p>
+            <span class="dcard-pill">6 Pengurus</span>
+          </div>
+        </a>
+
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-medbrand" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="Medbrand.png" class="dcard-logo-img" alt="Medbrand" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">Medbrand</h3>
+            <p class="dcard-subtitle">Media dan Branding</p>
+            <span class="dcard-pill">6 Pengurus</span>
+          </div>
+        </a>
+
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-depor" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="Depor.png" class="dcard-logo-img" alt="Olahraga" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">Olahraga</h3>
+            <p class="dcard-subtitle">Departemen Olahraga</p>
+            <span class="dcard-pill">6 Pengurus</span>
+          </div>
+        </a>
+
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-senbud" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="Senbud.png" class="dcard-logo-img" alt="Senbud" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">Senbud</h3>
+            <p class="dcard-subtitle">Seni dan Budaya</p>
+            <span class="dcard-pill">6 Pengurus</span>
+          </div>
+        </a>
+
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-kastrat" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="Kastrat.png" class="dcard-logo-img" alt="Kastrad" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">Kastrad</h3>
+            <p class="dcard-subtitle">Kajian dan Strategis</p>
+            <span class="dcard-pill">7 Pengurus</span>
+          </div>
+        </a>
+
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-sosling" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="Sosling.png" class="dcard-logo-img" alt="Sosling" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">Sosling</h3>
+            <p class="dcard-subtitle">Sosial dan Lingkungan</p>
+            <span class="dcard-pill">7 Pengurus</span>
+          </div>
+        </a>
+
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-psdmk" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="Psdmk.png" class="dcard-logo-img" alt="PSDMK" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">PSDMK</h3>
+            <p class="dcard-subtitle">Media dan Branding</p>
+            <span class="dcard-pill">6 Pengurus</span>
+          </div>
+        </a>
+
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-akpres" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="Akpres.png" class="dcard-logo-img" alt="Akpres" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">Akpres</h3>
+            <p class="dcard-subtitle">Media dan Branding</p>
+            <span class="dcard-pill">7 Pengurus</span>
+          </div>
+        </a>
+
+        <a class="desktop-division-card" href="https://ipb.link/report-card-1-adkesmah" target="_blank" rel="noopener noreferrer">
+          <div class="dcard-arrow-wrap">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </div>
+          <div class="dcard-logo-center">
+            <img src="ADKESMAH.png" class="dcard-logo-img" alt="Adkesmah" />
+          </div>
+          <div class="dcard-bottom-info">
+            <h3 class="dcard-title">Adkesmah</h3>
+            <p class="dcard-subtitle">Media dan Branding</p>
+            <span class="dcard-pill">6 Pengurus</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="desktop-ai-widget-root" id="desktopAiWidgetRoot">
+    
+    <div class="desktop-ai-fab-btn" id="desktopAiFabBtn" onclick="toggleDesktopAiChat()" title="Tanya Berdikari AI Assistant">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L14.4 7.6L20 10L14.4 12.4L12 18L9.6 12.4L4 10L9.6 7.6L12 2Z" fill="#ffffff"/>
+        <path d="M19 15L20.2 17.8L23 19L20.2 20.2L19 23L17.8 20.2L15 19L17.8 17.8L19 15Z" fill="#ffffff" stroke-width="1.2"/>
+      </svg>
+      <span class="desktop-ai-fab-glow"></span>
+      <span class="desktop-ai-fab-tooltip">Tanya Berdikari AI ✨</span>
+    </div>
+
+    <div class="desktop-ai-modal" id="desktopAiModal">
+      
+      <div class="desktop-ai-header">
+        <div class="desktop-ai-header-left">
+          <div class="desktop-ai-avatar">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L14.4 7.6L20 10L14.4 12.4L12 18L9.6 12.4L4 10L9.6 7.6L12 2Z" fill="#FDE053" stroke="#EC8129"/>
+              <path d="M19 15L20.2 17.8L23 19L20.2 20.2L19 23L17.8 20.2L15 19L17.8 17.8L19 15Z" fill="#ffffff" stroke="#31487A" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <div class="desktop-ai-header-title">
+            <h4>Berdikari AI Assistant</h4>
+            <small>● Aktif Melayani 12 Divisi</small>
+          </div>
+        </div>
+        <div class="desktop-ai-header-actions">
+          <button class="icon-btn-sm" onclick="resetDesktopAiChat()" title="Mulai Obrolan Baru">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"/>
+            </svg>
+          </button>
+          <button class="icon-btn-sm close-modal-btn" onclick="closeDesktopAiChat()" title="Tutup">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="desktop-ai-body" id="desktopAiChatFlow">
+        
+        <div class="desktop-ai-welcome" id="desktopAiWelcome">
+          <div class="gemini-sparkle-center" style="width: 48px; height: 48px; margin-bottom: 8px;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L14.4 7.6L20 10L14.4 12.4L12 18L9.6 12.4L4 10L9.6 7.6L12 2Z" fill="#FDE053" stroke="#EC8129"/>
+              <path d="M19 15L20.2 17.8L23 19L20.2 20.2L19 23L17.8 20.2L15 19L17.8 17.8L19 15Z" fill="#ffffff" stroke="#31487A" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <h4>Halo, Rekan Mahasiswa</h4>
+          <p>Tanyakan info 12 divisi, SOP, proposal, atau lampirkan draf desain poster.</p>
+          <div class="desktop-ai-chips">
+            <button class="ai-chip-sm" onclick="askDesktopAiPrompt('Tolong jelaskan fokus dan tugas dari 12 divisi Langkah Berdikari')">Jelaskan 12 Divisi</button>
+            <button class="ai-chip-sm" onclick="askDesktopAiPrompt('Bagaimana alur pendaftaran dan syarat rekrutmen anggota?')">Alur Rekrutmen PSDMK</button>
+            <button class="ai-chip-sm" onclick="askDesktopAiPrompt('Bagaimana cara pengajuan request desain poster ke Medbrand?')">Request Desain Medbrand</button>
+            <button class="ai-chip-sm" onclick="triggerDesktopAiImageUpload()">Upload Poster / Berkas</button>
+          </div>
+        </div>
+
+        <div class="desktop-ai-messages" id="desktopAiStreamMessages"></div>
+      </div>
+
+      <div class="desktop-ai-preview" id="desktopAiImgPreview" style="display: none;">
+        <img id="desktopAiImgPreviewSrc" src="" alt="Lampiran" />
+        <button class="preview-remove-btn" onclick="removeDesktopAiImage()">✕</button>
+      </div>
+
+      <input type="file" id="desktopAiImageFileInput" accept="image/*" style="display: none;" onchange="handleDesktopAiImageSelect(event)" />
+
+      <div class="desktop-ai-footer">
+        <div class="desktop-ai-input-bar">
+          <button class="gemini-attach-btn" onclick="triggerDesktopAiImageUpload()" title="Lampirkan Gambar">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+            </svg>
+          </button>
+          <textarea 
+            id="desktopAiPromptInput" 
+            class="desktop-ai-textarea" 
+            placeholder="Tanyakan seputar BEM atau lampirkan gambar..." 
+            rows="1" 
+            onkeydown="handleDesktopAiKeyDown(event)"></textarea>
+          <button class="desktop-ai-send-btn" id="desktopBtnSendAiPrompt" onclick="sendDesktopAiPrompt()" title="Kirim">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="voice-modal" id="allDivisionsModal">
+    <div class="voice-modal-card">
+      <h4>Pilih dari 12 Divisi Resmi</h4>
+      <p>Ketuk divisi untuk membuka formulir, tautan & chat:</p>
+      <div class="division-choice-stack scrollable" id="allDivisionsChoiceList">
+        <a class="choice-btn" href="https://ipb.link/report-card-1-bph" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="BPH.png" class="drawer-div-logo" alt="BPH" />
+          <strong>BPH</strong> - <small>Badan Pengurus Harian & Tata Kelola Administrasi</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://ipb.link/report-card-1-psdmk" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Psdmk.png" class="drawer-div-logo" alt="PSDMK" />
+          <strong>PSDMK</strong> - <small>Pengembangan Sumber Daya Mahasiswa & Kaderisasi</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://ipb.link/report-card-1-medbrand" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Medbrand.png" class="drawer-div-logo" alt="Medbrand" />
+          <strong>Medbrand</strong> - <small>Media Informasi, Publikasi & Branding Kreatif</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://ipb.link/report-card-1-eksmit" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Eksmit.png" class="drawer-div-logo" alt="Eksmit" />
+          <strong>Eksmit</strong> - <small>Hubungan Eksternal, Kerjasama Lembaga & Kemitraan</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://ipb.link/report-card-1-kastrat" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Kastrat.png" class="drawer-div-logo" alt="Kastrat" />
+          <strong>Kastrat</strong> - <small>Kajian Isu Strategis, Advokasi Kebijakan & Pergerakan</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://ipb.link/report-card-1-ristek" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Ristek.png" class="drawer-div-logo" alt="Ristek" />
+          <strong>Ristek</strong> - <small>Penelitian Ilmiah, Inovasi & Pengembangan Teknologi</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://ipb.link/report-card-1-sosling" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Sosling.png" class="drawer-div-logo" alt="Sosling" />
+          <strong>Sosling</strong> - <small>Pengabdian Sosial, Kemanusiaan & Peduli Lingkungan</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://ipb.link/report-card-1-adkesmah" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="ADKESMAH.png" class="drawer-div-logo" alt="ADKESMAH" />
+          <strong>ADKESMAH</strong> - <small>Advokasi Mahasiswa, Finansial & Kesejahteraan Kampus</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://ipb.link/report-card-1-akpres" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Akpres.png" class="drawer-div-logo" alt="Akpres" />
+          <strong>Akpres</strong> - <small>Pengembangan Prestasi, Bimbingan Lomba & Akademik</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://ipb.link/report-card-1-depor" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Depor.png" class="drawer-div-logo" alt="Depor" />
+          <strong>Depor</strong> - <small>Departemen Olahraga, Kebugaran & Turnamen Mahasiswa</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://ipb.link/report-card-1-senbud" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="Senbud.png" class="drawer-div-logo" alt="Senbud" />
+          <strong>Senbud</strong> - <small>Apresiasi Seni, Budaya & Kreasi Mahasiswa</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+        <a class="choice-btn" href="https://ipb.link/report-card-1-imbang" target="_blank" rel="noopener noreferrer" onclick="closeAllDivisionsSheet()">
+          <img src="IMBANG.png" class="drawer-div-logo" alt="IMBANG" />
+          <strong>IMBANG</strong> - <small>Inkubasi Bisnis Mahasiswa, Manajemen Finansial & Usaha Mandiri</small>
+          <span class="choice-arrow">↗</span>
+        </a>
+      </div>
+      <button class="voice-action-btn close" onclick="closeAllDivisionsSheet()">Tutup</button>
+    </div>
+  </div>
+
+  <div class="voice-modal" id="adminAuthModal">
+    <div class="voice-modal-card">
+      <div class="voice-pulse-ring" style="background: rgba(49, 72, 122, 0.15);">
+        <div class="voice-mic-icon" style="background: var(--primary-gradient);">
+          <span style="font-size: 22px;">🔑</span>
+        </div>
+      </div>
+      <h4 id="adminAuthModalTitle">Akses Khusus Admin</h4>
+      <p id="adminAuthModalDesc">Masukkan PIN Admin untuk mengaktifkan izin menghapus pesan anggota.</p>
+      <div class="admin-pin-box">
+        <input type="password" class="form-input" id="adminPinInput" placeholder="Masukkan PIN (Default: admin123)" />
+      </div>
+      <div class="voice-actions">
+        <button class="voice-action-btn" onclick="submitAdminPin()">Konfirmasi Masuk Admin</button>
+        <button class="voice-action-btn close" onclick="closeAdminAuthModal()">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="voice-modal" id="feedbackModal">
+    <div class="voice-modal-card">
+      <div class="voice-pulse-ring" style="background: rgba(16, 185, 129, 0.2);">
+        <div class="voice-mic-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+      </div>
+      <h4 id="feedbackModalTitle">Formulir Terkirim!</h4>
+      <p id="feedbackModalDesc">Terima kasih, permohonan Anda telah berhasil diterima dan akan segera ditindaklanjuti.</p>
+      <div class="voice-actions">
+        <button class="voice-action-btn" onclick="closeFeedbackModal()">Selesai & Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

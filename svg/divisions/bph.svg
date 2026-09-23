@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bphGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#192338"/>
+      <stop offset="100%" stop-color="#31487A"/>
+    </linearGradient>
+    <filter id="bphShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Background Badge -->
+  <rect x="8" y="8" width="104" height="104" rx="26" fill="url(#bphGrad)" filter="url(#bphShadow)"/>
+  <rect x="8" y="8" width="104" height="104" rx="26" fill="none" stroke="#FDE053" stroke-width="1.5" stroke-opacity="0.4"/>
+  
+  <!-- Executive Emblem (Shield & Core) -->
+  <g transform="translate(60, 52) scale(1.6)" stroke="#FDE053" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 -15 L11 -8 L11 4 L0 12 L-11 4 L-11 -8 Z" fill="rgba(253, 224, 83, 0.15)"/>
+    <circle cx="0" cy="-2" r="3.5" fill="#FDE053"/>
+  </g>
+  
+  <!-- Text Label -->
+  <text x="60" y="98" font-family="'Poppins', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">BPH</text>
+</svg>

@@ -1,0 +1,18 @@
+{
+  "name": "langkah-berdikari-web",
+  "version": "1.0.0",
+  "description": "BEM Langkah Berdikari Web Portal & Berdikari AI Assistant",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "bem",
+    "langkah-berdikari",
+    "dashboard",
+    "gemini-ai",
+    "vercel"
+  ],
+  "license": "MIT"
+}
