@@ -1,6 +1,6 @@
 const SYSTEM_INSTRUCTION = '';
 
-const MODEL = 'gemini-3.5-flash';
+const MODEL = 'gemini-3.1-flash-lite';
 
 function escapeHtml(s) {
   return s
