@@ -973,12 +973,12 @@ window.sendAiScreenPrompt = function() {
   const fetchAiResponse = async () => {
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 7500);
+      const timeoutId = setTimeout(() => controller.abort(), 30000);
 
       const payload = {
         prompt: promptText,
         image: attachedImage ? {
-          mimeType: attachedImage.type || 'image/png',
+          mimeType: (attachedImage.dataUrl.match(/^data:(.+?);base64,/) || [])[1] || 'image/png',
           data: attachedImage.dataUrl.split(',')[1]
         } : null
       };
@@ -1177,7 +1177,7 @@ function generateAiResponse(query, hasImage) {
     return `<strong>Prabowo Subianto</strong> adalah Presiden Republik Indonesia ke-8 yang mulai menjabat sejak 20 Oktober 2024. ✨`;
   }
 
-  return `Pertanyaan Anda telah diterima: "<strong>${query}</strong>". Berdikari AI siap membantu menjawab pertanyaan Anda tanpa batasan. ✨`;
+  return `Maaf, Berdikari AI sedang sibuk. Coba kirim ulang pertanyaan Anda sebentar lagi ya. 🙏`;
 }
 
 window.toggleAdminPrompt = function() {
@@ -1751,12 +1751,12 @@ window.sendDesktopAiPrompt = function() {
   const fetchDesktopAi = async () => {
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 7500);
+      const timeoutId = setTimeout(() => controller.abort(), 30000;
 
       const payload = {
         prompt: promptText,
         image: attachedImage ? {
-          mimeType: attachedImage.type || 'image/png',
+          mimeType: (attachedImage.dataUrl.match(/^data:(.+?);base64,/) || [])[1] || 'image/png',
           data: attachedImage.dataUrl.split(',')[1]
         } : null
       };
