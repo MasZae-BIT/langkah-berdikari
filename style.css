@@ -164,16 +164,6 @@ html, body {
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.screen-top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 4px;
-  margin-bottom: 12px;
-  height: 38px;
-  flex-shrink: 0;
-}
-
 .top-bar-right-actions {
   display: flex;
   align-items: center;
